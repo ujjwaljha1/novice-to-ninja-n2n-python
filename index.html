@@ -1,0 +1,3540 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Programming Questions and Solutions</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; }
+            pre { background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+            h1 { color: #333; text-align: center; }
+            h2 { color: #0066cc; }
+            h3 { color: #009900; }
+            .correct-answer { background-color: #e6ffe6; padding: 10px; border-left: 5px solid #00cc00; }
+            .incorrect-answer { background-color: #ffe6e6; padding: 10px; border-left: 5px solid #cc0000; }
+        </style>
+    </head>
+    <body>
+        # 📚 Questions for ID: 5baa72e94813f0db7f497a32
+
+## :question: Question 1 (Order: 1)
+
+<p>Built-in functions are already defined within python to do a particular task. Before writing a program we must be aware of important built-in functions as well as modules so that we will be able to solve complex problems using them.</p>
+<p><strong><u>The abs() function</u></strong></p>
+<p>Absolute value is the value of a number without its sign. The abs() function returns the absolute value of a number. <br/>
+For example, absolute value of 8 is 8 and absolute value of -8 is 8.</p>
+<p>We might use the abs() function to do something like calculate an absolute amount of movement of a character in a game. Take positive values if move towards right and negative if move towards left. We can calculate total movements by adding absolute value of movement in each direction.</p>
+<p>For example, <br/>
+left = -21<br/>
+right = 36<br/>
+total_movement = abs(left) + right</p>
+<p><strong>Question</strong>: Write a program to find the absolute value  of  'r', where r=|z|= square root of (x^2+y^2) and complex number z = x + yj.</p>
+
+
+### 💻 Solution (python):
+
+```python
+import math
+
+x = int(input())
+y = int(input())
+
+absolute_value = abs(math.sqrt(x * x + y * y))
+print("%0.1f" %absolute_value)
+
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>The bool() function</strong></u></p>
+<p>The name bool is a short for boolean. Programmers use the word boolean to describe a type of data that can have one of two possible values, usually either true or false.</p>
+<p>The bool() function takes a single parameter and returns either True or False based on its value. We might use bool when we need to decide whether a value has been set or not.</p>
+<pre>
+<code class="language-python">if (bool(age)):
+    print(“Age is” + str(age))
+else:
+    print(“Data not available”)</code></pre>
+<p>When using bool() function for numbers, 0 returns False and any other number returns True.</p>
+<p>For example,<br/>
+print(bool(0)) will return False<br/>
+print(bool(10)) will return True<br/>
+print(bool(-3)) will return True<br/>
+print(bool(1.5)) will return True </p>
+<p>When we use bool() function for strings, it returns False if there’s no value for the string otherwise, it will return True.</p>
+<p>For example,<br/>
+print(bool(None)) will return False<br/>
+print(bool(“”)) will return False<br/>
+print(bool(“ ”)) will return True<br/>
+print(bool(“Python”)) will return True</p>
+<p>The bool function will return False for lists, tuples and dictionary, when it doesn't contain any values otherwise returns True.</p>
+<p>For example,<br/>
+my_list = []<br/>
+print(bool(my_list)) will return False<br/>
+my_tuple = ('a', 'b', 'c')<br/>
+print(bool(my_tuple))will return True</p>
+<p><strong>Question</strong>:Write a code to find the output of the followings.</p>
+<p>i) bool(54.85)<br/>
+ii) bool(“live”)<br/>
+iii) bool(list(range(0, 3, 4)))</p>
+
+
+### 💻 Solution (python):
+
+```python
+print(bool(54.85))
+print(bool("live"))
+print(bool(list(range(0, 3, 4))))
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>The exec() function</strong></u></p>
+<p>"The exec() function is used for the dynamic execution of program which can either be a string or object code. We can say that exec function is like an eval,only difference is that eval only accepts a single expression and returns a value that we can save in a variable and exec accepts a large blocks of code and doesn't return a value."</p>
+<pre>
+<code class="language-python">my_program = '''print(‘Hello') 
+         print(‘World')''' 
+exec(my_program)
+
+Output:
+Hello
+World</code></pre>
+<p><br/>
+In the above code,the first two lines used to create a variable with a multiline string containing two print statements and then use exec() function to run the string variable. So output shows 'Hello World'.</p>
+<p><strong>Question</strong>: Write a code to find the output of the 'a = 10\nb=15\nprint("Sum =", a+b)'   ,using exec() function.</p>
+
+
+### 💻 Solution (python):
+
+```python
+program = 'a = 10\nb=15\nprint("Sum = "+ str(a + b))'
+exec(program)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>The len() function</strong></u></p>
+<p>The len() function returns the number of items in an object.</p>
+<p>When the object is a string, the len() function returns the number of characters in the string.</p>
+<p>For example, len('this is a test string')  will return 21</p>
+<p>print(len(['pen', 'book', 'ball'])) will return 3</p>
+<p>print(len({'Circle': 'Red', 'Square': 'Blue', 'Triangle': 'Green'})) will return 3</p>
+<p><strong>Question</strong>: Write a code to find the length of the list of numbers from 25 to 63 and print the result.</p>
+
+
+### 💻 Solution (python):
+
+```python
+numbers = list(range(25, 64))
+print(len(numbers))
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><u><strong>The min() and max() function</strong></u></p>
+<p>The max() function returns the largest item in a list, tuple or string.<br/>
+The min() function returns the smallest item in the list, tuple or string. </p>
+<p><strong>Note:</strong> Letters are ranked alphabetically and lowercase letters come after uppercase letters in ranked Eg. z &gt; A. </p>
+<p>We can call the max() function directly and enter the items that we want to compare into the parentheses as parameters.</p>
+<p>For example,  numbers = [15, 40, 10, 35, 11] and output as max=40 and min = 10 by using below code.</p>
+<pre>
+<code class="language-python">numbers = [15, 40, 10, 35, 11] 
+print(max(numbers))# for max value
+print(min(numbers))# for min value</code></pre>
+<p>We can also use a string with the characters separated by commas or spaces for max() function as below.</p>
+<pre>
+<code class="language-python">strings = ‘a,b,w,v,f,b,z,A,Y,H,M, ‘ 
+print(max(strings)) # for max value
+
+Output:
+Z</code></pre>
+<p><strong>Question</strong>:Write a code to find the smallest and the largest numbers in the list as [12, 78, 5, 46, 32, 52, 61, 43] and print the result.</p>
+
+
+### 💻 Solution (python):
+
+```python
+numbers=[12, 78, 5, 46, 32, 52, 61, 43]
+print(min(numbers))
+print(max(numbers))
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p><strong><u>The range() function</u></strong></p>
+<p>The range() function is mainly used in for loops, to loop through a section of code a specific number of times. The first two parameters given to range are called the start and the stop range. The numbers that range() function generates begin with the number given as the first parameter and end with the number that’s one less than the second parameter. </p>
+<p>The range() function actually returns a special object called an iterator that repeats an action a number of times.We can convert the iterator into a list by using the function list().</p>
+<p>For example, print(list(range(0, 50))) will print a list of numbers from 0 to 49.</p>
+<p>We can also add a third parameter to range() function called step. If the step value is not included, the number 1 is used as the step by default. </p>
+<p>For example, count_by_twos = list(range(0, 30, 2)), where each number in the list increases by two from the previous number.</p>
+<p>We can also use negative steps as below.<br/>
+count_down_by_twos = list(range(40, 10, -2),where each number in the list decreases by two from the previous number.</p>
+<p><strong>Question</strong>: Write a code to print all the numbers which are multiple of 5 in the range of 500 to 550.</p>
+
+
+### 💻 Solution (python):
+
+```python
+print(list(range(500, 551, 5)))
+
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p><u><strong>The sum() Function</strong></u></p>
+<p>The sum() function adds each item of a list and returns the total of them. <br/>
+For example, input list numbers = [10, 20, 30, 40, 50, 60, 70] and after executing the below code, sum of all elements of list is 280.</p>
+<pre>
+<code class="language-python">numbers = [10, 20, 30, 40, 50, 60, 70]
+print(sum(numbers))</code></pre>
+<p><strong>Question</strong>: Write a code to find the sum of the numbers from 44 to 66 and print the result of sum.</p>
+
+
+### 💻 Solution (python):
+
+```python
+print(sum(list(range(44, 67)))) 
+
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p><u><strong>The dir() function</strong></u></p>
+<p>The dir() function (short for directory) returns the information about any value.  Basically, it tells us the functions that can be used with that value in alphabetical order in a list.</p>
+<p>For example, to display the functions, that are available for a list value [“1”, “P”, “M”], write a code as below.</p>
+<p>dir([“1”, “P”, “M”])</p>
+<p>The dir() function works on anything, including strings, numbers, functions, modules, objects, and classes.</p>
+<p><strong>Question: </strong>Write a code for dir () function on an integer value 2 and print the result.</p>
+
+
+### 💻 Solution (python):
+
+```python
+print(dir(2))
+
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p><u><strong>Working with files</strong></u></p>
+<p>Python’s built-in open() function opens a file in the python shell and displays its contents.</p>
+<p>The code of opening a file is as below.</p>
+<pre>
+<code class="language-python">test_file = open(Enter your file location) 
+text = test_file.read()
+print(text)</code></pre>
+<p><strong>Question</strong>: If created a python file as 'code.py' in home folder, then how can print the content of the file 'code.py' using python?</p>
+
+
+### 💻 Solution (java):
+
+```java
+
+```
+
+### 📝 Answer Options:
+
+1. ❌ 
+<p>test_file = open("\home\code.py") <br/>
+text = file.read(test_file)<br/>
+print(text)</p>
+
+
+2. ❌ 
+<p>test_file = open(\home\code.py) <br/>
+text = file.read(test_file)<br/>
+print(text)</p>
+
+
+3. ❌ 
+<p>test_file = open(\home\code.py) <br/>
+text = test_file.read()<br/>
+print(test_file)</p>
+
+
+4. ✅ **Correct Answer:**
+<p>test_file = open("\home\code.py") <br/>
+text = test_file.read()<br/>
+print(text)</p>
+
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p><u><strong>Writing on files</strong></u></p>
+<p>We use below steps to write anything into the file.</p>
+<p>First we need a file to write so we create a file by using below code.</p>
+<p>test_file = open('c:\\myfile.txt', 'w')</p>
+<p>When we call test_file,it creates a new and empty file in writing mode denoted by string 'w' means the parameter 'w' tells python that we want to write to the file object, rather than read from it.</p>
+<p>To add information to this new file ,we need a write() function as below.<br/>
+    test_file.write('this is my test file'), where 'this is my test file' is a string which we want to write in a file.</p>
+<p>Finally, we need to tell python when we’re finished writing to the file, using the close function:<br/>
+    test_file.close()</p>
+<p><strong>Question:</strong> Which of the following code will write "Test" in code.py file?</p>
+
+
+### 💻 Solution (java):
+
+```java
+
+```
+
+### 📝 Answer Options:
+
+1. ❌ 
+<p>test_file = open("code.py", "w")<br/>
+test_file.write('Test')</p>
+<p>test_file.close()<br/>
+text = test_file.read()</p>
+<p>print(text)</p>
+
+
+2. ✅ **Correct Answer:**
+<p>test_file = open("code.py", "w")<br/>
+test_file.write('Test')</p>
+<p>test_file.close()</p>
+<p>test_file = open("code.py")<br/>
+text = test_file.read()</p>
+<p>print(text)</p>
+
+
+3. ❌ 
+<p>test_file.write('Test')</p>
+<p>test_file.close()</p>
+<p>test_file = open("code.py")<br/>
+text = test_file.read()</p>
+<p>print(text)</p>
+
+
+4. ❌ 
+<p>test_file = open("code.py", "w")<br/>
+test_file.write('Test')</p>
+<p>test_file.close()</p>
+<p>text = test_file.read()</p>
+<p>test_file = open("code.py")</p>
+
+
+---
+
+
+
+# 📚 Questions for ID: 5bad1b2aa2da6b25b98780d1
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a program to define a class as Temprature which contains two methods as celseiusToFahren() and fahrenToCelseius()  as below and display the output by creating its object and calling its methods. The first method takes 10 degree celsius and the second method takes 100 degree fahrenheit as an input.</p>
+<p>1) The celseiusToFahren() method, which takes celsius value, converts it into fahrenheit and print resulted fahrenheit value upto 1 decimal point (eg. 50.0).</p>
+<p>2) The fahrenToCelseius() method,which takes fahrenheit value, converts it into celsius and print resulted celsius value upto 1 decimal point (eg. 50.0).</p>
+<p><strong>Hint: </strong>Formula of<strong> </strong> Fahrenheit = (celsius *  9.0 / 5.0 ) + 32</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Temperature():
+  def celseiusToFahren(self, celsius):
+    self.celsius = float(celsius)
+    self.fahren = (celsius *  9.0 / 5.0 ) + 32
+    print("%.1f"%(self.fahren))
+  def fahrenToCelseius(self, fahren):
+    self.fahren = fahren
+    self.celsius = (fahren - 32) * 5.0 / 9.0
+    print("%.1f"%(self.celsius))
+    
+temp = Temperature()
+temp.celseiusToFahren(10)
+temp.fahrenToCelseius(100)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a program to define a class Student which is initialized with two variables as (name and roll_number) and contains two methods as display_info() and setMarks() as below.</p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">1)The display_info() method, which display the Name and Roll No of student in separate lines.</p>
+<p dir="ltr">2)The setMarks() method , which assign a marks to the student and display the Marks of  the student.</p>
+<p dir="ltr">The output should be displayed the student details as Name, Roll No and Marks in separate lines by creating an object and calling methods of a Student class.</p>
+<p dir="ltr">Take input as Name=Emma, Roll no=18 and Marks=68.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Student():
+  def __init__(self, name, roll_no):
+    self.name = name
+    self.roll_no = roll_no
+  def display_info(self):
+    print("Name: " + self.name)
+    print("Roll no: " + str(self.roll_no))
+  def setMarks(self, marks):
+    self.marks = marks
+    print("Marks: " + str(self.marks))   
+    
+student1 = Student("Emma", 18)
+student1.display_info()
+student1.setMarks(68)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><meta charset="utf-8"/>Write a program to define a class Date, which is initialized with 3 variables as (date, month and year) and containts a method as print_date, which display the date in format as "day month year" (eg: 12 January 2020). The output should be displayed the date value by creating an object of a Date class and calling its method. Consider input date= 8/April/2000.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Date:
+    def __init__(self, d, m, y):
+        self.date = d
+        self.month = m
+        self.year = y
+        
+    def print_date(self):
+        print(self.date + " " + self.month + " " + self.year)
+        
+Date1 = Date("08", "April", "2000")
+Date1.print_date()
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a program to define a class Fruits, which is initialized with name and price of fruit ,and contains a two methods as below.</p>
+<p>1) A method, which assign a quantity for fruit and print the value of it. Consider the fixed quantity as 10 for fruit.<br/>
+2) A method , which calculate the total price of fruit and print the value of it.</p>
+<p>The output should be print the quantity and total price of Apple in separate lines, if a price per apple is 50. To get an output, create an object of a Fruits class and call methods of it.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Fruits:
+    def __init__(self, n, p):
+        self.name = n
+        self.price = p
+        
+    def quantity(self):
+        self.quantity = 10
+        print(self.quantity)
+    
+    def total_price(self):
+        self.total_price = self.quantity * int(self.price)
+        print(self.total_price)
+        
+Fruit1 = Fruits("Apple", "50")
+Fruit1.quantity()
+Fruit1.total_price()
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a program to perform the followings for the given class Animals and its methods as eat and walk, which prints "Eating...." and "Walking....". respectively. </p>
+<p>1) Create a two classes Herbivores and Carnivores as a subclass of the class Animals, which has eating method as herb_eat() and carn_eat() respectively.</p>
+<p>2) The herb_eat() method use the eat() method of Animals class and prints Grass.</p>
+<p>3) The carn_eat() method use the eat() method of Animals and prints Meat.</p>
+<p>4) Create an object as cow for a Herbivores class and call the herb_eat() method to get the output.</p>
+<p>5) Create an object as lion for a Carnivores class and call the carn_eat() method to get the output.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Animals:            
+    def eat(self):
+        print("Eating....")
+    
+    def walk(self):
+        print("Walking.....")
+
+class Herbivores(Animals): 
+    def herb_eat(self):
+        self.eat()
+        print("Grass")
+
+class Carnivores(Animals):
+    def carn_eat(self):
+        self.eat()
+        print("Meat")
+
+cow = Herbivores()
+cow.herb_eat()
+lion = Carnivores()
+lion.carn_eat()
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to define a class Rectangle, which is initialized by a length and a width and contains a method, which calculates the area of rectangle and print the result of it. The output should be displayed the area of rectangle for length=5 and width=12 by creating a object of a Rectangle class and calling a method of it.<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+class Rectangle():
+    def __init__(self, l, w):
+        self.length = l
+        self.width  = w
+
+    def findArea(self):
+        return self.length * self.width
+
+rect1 = Rectangle(5,12)
+print(rect1.findArea())
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a program to define a class Shape and its subclass Square. The Square class has a function as init, which takes a length as an argument. Both classes have a function as an 'area', which calculates and returns an area of the shape. By default , take area of Shape class is 0. The output should be displayed the area of square for length=5 by creating an object of a Square class and calling its method.<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+class Shape():
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, l):
+        self.length = l
+
+    def area(self):
+        return self.length * self.length
+
+sq1= Square(5)
+print(sq1.area())
+
+
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a program to define a class Person with its two child classes as Male and Female. All 3 classes have a method getGender(), which will print the "Male" for Male class, "Female" for Female class and "Unknown" for Person class.The output should be displayed a "Male" and "Female" in separate lines against creating an object of a childclass of a Person class and calling getGender()method.<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+class Person():
+    def getGender(self):
+        return "Unknown"
+
+class Male(Person):
+    def getGender(self):
+        return "Male"
+
+class Female(Person):
+    def getGender(self):
+        return "Female"
+
+male_obj = Male()
+female_obj = Female()
+print(male_obj.getGender())
+print(female_obj.getGender())
+
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a program to define a class called Poem which is initialized with variable poem, which includes below poem lines as a list and contains a method as getPoem(),which prints the each line of poem.</p>
+<p>When I behold a forest spread<br/>
+With silken trees upon thy head;<br/>
+And when I see that other dress<br/>
+Of flowers set in comeliness;</p>
+<p>The output should be displayed the all lines of a poem in separate lines by creating an object of a Poem class and calling its method.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Poem():
+    def __init__(self):
+        self.poem = ["When I behold a forest spread", "With silken trees upon thy head;", "And when I see that other dress", "Of flowers set in comeliness;"]
+
+    def getPoem(self):
+      for line in self.poem:
+        print(line)
+obj = Poem()
+obj.getPoem()
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bad24a1a2da6b554b878132
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a function to find and print the square of an entered number x.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+
+def find_square(x):
+  print (x * x)
+
+find_square(x)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a program to define a two functions, one is for finding a square of an entered numbers(x and y) and second is for finding the sum of the square of a two entered numbers(x and y) and print the result of sum.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+
+def find_square(num):
+  return num * num
+
+def find_sum(num1, num2):
+  return num1 + num2
+  
+print(find_sum(find_square(x), find_square(y)))
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p>Write a function to read a two entered values and store them in reverse order as a list. The output will display the values in a list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num1 = int(input())
+num2 = int(input())
+
+def reversenum(num1,num2):
+    return [num2,num1]
+    
+print(reversenum(num1,num2))
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a function to calculate and print the area and perimeter of a square against an entered side value.</p>
+<p><strong>Hint:</strong> Area = square of side, perimeter = 4 * side</p>
+
+
+### 💻 Solution (python):
+
+```python
+side = int(input())
+
+def calculate(side):
+  print("Area: " + str(side * side))
+  print("Perimeter: " + str(4 * side))
+  
+calculate(side)
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a function to check if an entered number is odd or even and returns 'Odd', if number is odd otherwise returns 'Even'. The output will display the result as 'Odd' or 'Even' according to the returns of function.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+
+def Find_odd_or_even(num):
+  if (num % 2 == 0):
+    return "Even"
+  else:
+    return "Odd"
+  
+print(Find_odd_or_even(num))
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to find and print a factorial of an entered number by using function.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+
+def find_factorial(num):
+  if (num == 1):
+    fact = 1
+  else:
+    fact = num * find_factorial(num - 1)
+  return fact
+
+print(find_factorial(num))
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a function to find the largest number of an entered three numbers (x,y and z). The output will display the largest number.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+z = int(input())
+
+def Find_largest_of_two( x, y ):
+    if x > y:
+        return x
+    return y
+  
+def Find_largest_of_three( x, y, z ):
+    return Find_largest_of_two( x, Find_largest_of_two( y, z ) )
+
+print(Find_largest_of_three(x, y, z))
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a function to find and print the sum of all the numbers of a given list [4, 5, 6, 3, 7, 9].</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = [4, 5, 6, 3, 7, 9]
+def Add_list(num):
+    total = 0
+    for x in num:
+        total = total + x
+    return total
+print(Add_list(num))
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a function to check whether an entered number is in a given range and print 'The number is in the given range.' if an entered number is in given range otherwise print 'The number is outside the given range.'.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+lower = int(input())
+upper = int(input())
+
+def check_number(num,lower,upper):
+  found = False
+  for i in range(lower, upper):
+    if (i == num):
+      found = True
+      break
+  if(found):
+    print( "The number is in the given range.")
+  else :
+    print("The number is outside the given range.")
+
+check_number(num, lower, upper)
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p>Write a function which is used to print a dictionary (d) where the keys are numbers between 1 and 10 (both included) and the values are square of keys.</p>
+<p><strong>Note:</strong> The output will display the resulted dictionary.</p>
+
+
+### 💻 Solution (python):
+
+```python
+def print_dict():
+	d=dict()
+	for i in range(1, 11):
+          d[i]= i * i
+	print(d)
+print_dict()
+```
+
+---
+
+## :question: Question 11 (Order: 11)
+
+<p>Write a function which is used to print a dictionary (d) where the keys are numbers between 1 and 5 (both included) and the values are factorial of keys. </p>
+<p><strong>Note:</strong> The output will display the resulted dictionary.</p>
+
+
+### 💻 Solution (python):
+
+```python
+def find_factorial(num):
+    if (num == 1):
+        return 1
+    return num * find_factorial(num - 1)
+
+def print_dict():
+    d=dict()
+    for num in range(1, 6):
+        d[num] = find_factorial(num)
+    print(d)
+
+print_dict()
+```
+
+---
+
+## :question: Question 12 (Order: 12)
+
+<p>Write a program to compute the below function for an entered number, n and print the result of it.</p>
+<p>f(n)=f(n-1)+100 ,where f(0)=1</p>
+
+
+### 💻 Solution (python):
+
+```python
+n = int(input())
+
+def calculateFunction(n):
+    if n==0:
+        return 1
+    else:
+        return calculateFunction(n - 1) + 100
+
+print(calculateFunction(n))
+```
+
+---
+
+## :question: Question 13 (Order: 13)
+
+<p>Write a binary search function which is used to search an entered number in the given sorted list (s_list) and returns the index position of the number, if found otherwise return Not found. </p>
+<p>s_list = [3, 4, 6, 7, 8, 9, 11, 15, 18]</p>
+<p><strong>Note:</strong> The output will display the index position of an entered number or Not found against returns of function.</p>
+
+
+### 💻 Solution (python):
+
+```python
+import math
+s_list = [3, 4, 6, 7, 8, 9, 11, 15, 18]
+num = int(input())
+
+def binary_search(s_list, element):
+    bottom = 0
+    top = len(s_list) - 1
+    index = False
+    while (top >= bottom and index == False):
+        mid = int(math.floor((top + bottom) / 2.0))
+        if (s_list[mid] == element):
+            index = mid
+        elif (s_list[mid] > element):
+            top = mid - 1
+        else:
+            bottom = mid + 1
+    if(index):
+        return index
+    else:
+        return "Not found"
+
+print(binary_search(s_list, num))
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0a9b9f1efbf737644046c
+
+## :question: Question 1 (Order: 1)
+
+<p><u><strong>IF Statements</strong></u></p>
+<p>The program execution started at the top instruction in the program and moved straight down and executing each instruction in order. But with some statements, we can control the flow of the program based on conditions. These kinds of statements are called flow control statements. Since they change the flow of the program execution as it moves around our program. Flow control statements includes conditional statements and loops.</p>
+<p>In day to day life, we make decisions based on our situation and each our decision will have a certain effect on what we ended up doing. Every decision we make can be modeled as a series of true and false statements.</p>
+<p>In programming also, we often ask yes or no questions and decide to do something based on the answer. These sorts of questions are called <strong>conditions</strong>.</p>
+<p><strong>Conditional statements </strong>are the digital equivalent of the decisions we make, where our code does something different depending on whether something is <strong>true </strong>or <strong>false</strong>. </p>
+<p>For example, in a situation where we need to do something only if some conditions are True, we can use if statements.</p>
+<p>Structure of if statement is, the word if, followed by a condition and colon. On next line, write commands to be run.</p>
+<pre>
+<code class="language-python">if(marks == 50):
+      print("Good")</code></pre>
+<p>The if statement will run, if the if statement’s condition evaluates to True and if the condition is False, the code in the if block is skipped. Using if statements, we can make the program run certain code only when we want it to.</p>
+<p><strong>Question</strong>: Write a program to print a message "Invalid" if an entered number is less than zero otherwise print number.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+if(num < 0):
+  	print("Invalid")
+if(num > 0):
+  print(num)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>Block of Statements</strong></u></p>
+<p>Several lines of code can be grouped together in a block. Every line in a block of code begins with at least the number of spaces as the first line in the block. We can tell where a block begins and ends by looking at the number of spaces at the front of the lines. This is the line’s indentation.</p>
+<p>For example, if we want to execute more than one commands  and if a certain condition is true, we can group the commands together by applying equal number of spaces before the command is going to be started. See below code.</p>
+<pre>
+<code class="language-python">if(number == 0):
+    print("Not valid")
+    print("Number must be greater than zero")
+    print("Try another")</code></pre>
+<p>Python programmers typically use four additional spaces of indentation to begin a block. Any following line that’s indented by that same amount is part of the block. The block ends when there’s a line of code with the same indentation as before the new block started. There can also be blocks within other blocks. </p>
+<p><strong>Question</strong>: Write a program to read a number entered by the user ( which is 4 or 5) and prints the previous number of it in separate lines. If number is not equal to user input, then don't print anything. </p>
+<p>For example, if input number is 5 then output is 1, 2, 3 and 4 in separate lines and if number is not equal to user input 5, then don't print anything.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+if(num == 5):
+  print(1)
+  print(2)
+  print(3)
+  print(4)
+
+if(num == 4):
+  print(1)
+  print(2)
+  print(3)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>Comparison Operators</strong></u></p>
+<p>Before start comparision operator , lets take a view on boolean data type. The boolean data type has only two values as True or False. The boolean values must be entered with an uppercase T or F and the rest of the value’s name in lowercase.</p>
+<p>Boolean values can be stored in variables just like the other data types:</p>
+<p>isValid = True</p>
+<p>We use different symbols in python to create our conditions such as equal to, greater than, less than etc.</p>
+<p>When we use comparison operator as below table, the program compares the things and tells us whether the criteria set by the comparison are either True (yes) or False (no).</p>
+<p style="margin:0in 0in 10pt"><span style="font-size:11pt"><span style="line-height:normal"><span style="font-family:Calibri,sans-serif"><b><span style="font-size:12.0pt"><span style='font-family:"Times New Roman","serif"'>Comparison operators are:</span></span></b></span></span></span></p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 300px;">
+<thead>
+<tr>
+<th scope="col">Operator</th>
+<th scope="col">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;</td>
+<td>Less than</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>Less than or equal to</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>Greater than</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>Greater than or equal to</td>
+</tr>
+<tr>
+<td>==</td>
+<td>Equal to</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>Not equal to</td>
+</tr>
+</tbody>
+</table>
+<p style="margin:0in 0in 10pt"> </p>
+<p>For example, the condition age &gt; 15 asks, “Is the value stored in age greater than 15?” If so, then the condition evaluates to True. If not, the condition evaluates to False.</p>
+<p>Be careful not to confuse the assignment operator '=' and the equal to comparison operator, ==. The equal sign '=' is used in assignment statements to store a value to a variable whereas the double equal sign' ==' is used in expressions to see whether two values are equal. It’s easy to accidentally use one when we mean to use the other.</p>
+<p>It might help to remember that both the equal to (comparison operator as ==) and the not equal to (comparison operatoras  !=) have two characters.</p>
+<p><strong>Question:</strong> Write a program to perform following statements for an entered number.</p>
+<p>          1) Print "Positive" if the value is greater than 0.</p>
+<p>          2) Print "Negative" if the value is less than 0.</p>
+<p>          3) Print "Zero" if the value is equal to 0.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+# if statement to check if the number is positive
+if(num > 0):
+  print("Positive")
+# if statement to check if the number is negative
+if(num < 0):
+  print("Negative")
+# if statement to check if the number is zero
+if(num == 0):
+  print("Zero")
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>IF-ELSE Statements</strong></u></p>
+<p>Else statement means we use if statements to do something, when a condition is not true. We can think of "if-else" statements as saying, "If something is true, then do this or else, do something different".</p>
+<p>For example, if-else conditions are written as below for limit value 10.</p>
+<pre>
+<code class="language-python">if(limit &gt;= 10):
+    print("You have reached your limit")
+else:
+    print("Go to next")</code></pre>
+<p>As above, if the limit variable is greater than or equal to the value 10, then the if statement’s condition is True and the if block tells the user that they reached the limit. However, if this condition is False means limit variable is less than 10, then python tries the block of else statement and print the string as 'Go to next'.</p>
+<p><strong>Question</strong>: Write a program to print the student's result message as "You are qualified", if the entered total marks is greater than 120 otherwise print the student's result message as  "Not qualified".</p>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+total_marks = int(input())
+# Check whether qualified or not
+if(total_marks > 120):
+  print("You are qualified")
+else:
+  print("Not qualified")
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><u><strong>Combining Conditions</strong></u></p>
+<p>We can combine two or more conditions by using the keywords '<strong>and' </strong>and <strong>'or'</strong>, which produces shorter and simpler code.</p>
+<p>Suppose if input numbers are from 1 to 20 and we need to write a program that checks one of the number is a multiple of 5 or not. As we know 5, 10, 15 and 20 are multiple of 5 but we don't need to check condition for these numbers separately so we can write the code as below.</p>
+<pre>
+<code class="language-python">if(number == 5 or number == 10 or number == 15 or number == 20):
+    print("Multiple of 5")
+else: 
+    print("Not a multiple of 5")</code></pre>
+<p>In above code, the result of two operations combined by <strong>'or'</strong> keyword and it will be true, if any of the condition is satisfied. See below.</p>
+<p>True <strong>or</strong> True = True<br/>
+False <strong>or</strong> False = False<br/>
+True <strong>or</strong> False = True<br/>
+False <strong>or</strong> True = True</p>
+<p>In the above code, the result of two operations combined by <strong>'and'</strong> keyword and it will be true, only if both conditions are satisfied.</p>
+<p>True <strong>and</strong> True = True<br/>
+False <strong>and</strong> False = False<br/>
+True <strong>and</strong> False = False<br/>
+False <strong>and</strong> True = False</p>
+<p><strong>Question</strong>: Write a program to print "It's a holiday" if the day enter by the user is Sunday or Saturday otherwise print "Not a holiday".</p>
+
+
+### 💻 Solution (python):
+
+```python
+Weekday = input()
+# Check whether the entered day is a holiday or not
+if(Weekday =="Sunday" or Weekday =="Saturday"):
+  print("It's a holiday")
+else:
+  print("Not a holiday")
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p><u><strong>ELIF Statements</strong></u></p>
+<p>Now we can expand our if-else statement further with elif (short word for else if) statements. We can think of elif or “else-if” statements as saying, “If this is true, do this Or else if this next condition is true, do that Or else if none of them is true, do this last thing.” Instead of making two decisions, we can now compare more than two situations by using elif in between if and else statements.</p>
+<p>For example, compare entered number is positive or negative or zero by below code.</p>
+<pre>
+<code class="language-python">if(number &gt; 0):
+    print("Positive")
+elif(number == 0):
+    print("Zero")
+else:
+    print("Negative")</code></pre>
+<p>In the above code, if the number variable is greater than 0, then the if condition is True and the if block tells the user that the number is positive. However, if this condition is False, then python tries the elif condition next. If number is equal to 0, then the string 'Zero' is printed to the screen. If both conditions are False means number variable is less than 0, then the code tells the user that the number is negative.</p>
+<p>We can have as many elif statements as we want. We can also leave off the else block if we don’t need one and just have if-elif statements.</p>
+<p><strong>Question: </strong>Write a program to describes the overall perfomance of a student in the exam, based on the following data and an entered total marks of student.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 300px;">
+<thead>
+<tr>
+<th scope="col">Marks Criteria</th>
+<th scope="col">Message</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Greater than 80</td>
+<td>Outstanding</td>
+</tr>
+<tr>
+<td>between 61 to 80  </td>
+<td>Excellent</td>
+</tr>
+<tr>
+<td>Between 41 to 60 </td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Less than or equal to 40       </td>
+<td>Not qualified</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+total_marks = int(input())
+# Give perfomance status using elif
+if(total_marks > 80):
+  print("Outstanding")
+elif(total_marks > 60):
+  print("Excellent")
+elif(total_marks > 40):
+  print("Good")
+else:
+  print("Not qualified")
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p><u><strong>None - variable with no value</strong></u></p>
+<p>In python, we can assign nothing or an empty value to a variable by None. It is the absence of value.</p>
+<p>For example, variable name = None and print(name) command display None.</p>
+<p><strong>Question:</strong> Write a program to store an entered number into a variable num and set num variable as empty, if an entered value is negative otherwise don't change the variable num value and the output display the stored value of num variable according to conditions.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = int(input())
+if(num < 0):
+  num = None
+print(num)
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0b39ff1efbf58974404db
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a program to define a two strings in separate lines and print it as a single line.</p>
+<p>For example, input string1=“Python is a easy language" and string2= "&amp; high level language.” so output="Python is a easy language &amp; high level language."</p>
+
+
+### 💻 Solution (python):
+
+```python
+string1 = input()
+string2 = input()
+print (string1 + string2)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a program to print the below sentances as below format.</p>
+<p>Alice: Hurrah! Only ten days to the holidays.</p>
+<p>Bob: I know. I've been counting the days.</p>
+<p><strong>Note:</strong> Take spacing between words.</p>
+
+
+### 💻 Solution (python):
+
+```python
+print("Alice: Hurrah! Only ten days to the holidays.\nBob: I know. I\'ve been counting the days.")
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p>Write a program to find the average of an entered three numbers and print the result of it.</p>
+<p>For example, input numbers as 15, 23, 25 and output would be a 21.0.</p>
+
+
+### 💻 Solution (python):
+
+```python
+number1 = float(input())
+number2 = float(input())
+number3 = float(input())
+average = (number1 + number2 + number3) / 3
+message = "Average is %s"
+print(message % average)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a program to read an entered first name, lastname and age of a person and print the details in format like "Jonny San is 2 years old."</p>
+
+
+### 💻 Solution (python):
+
+```python
+first_name = input()
+last_name = input()
+age = input()
+print(first_name + " " + last_name + " is " + age + " years old.")
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a program to create a list of fruits as "Orange, Apple, Mango, Pineapple, Strawberry, Banana" and follow the below instructions to print the output.</p>
+<p>1. Print the <strong>n</strong> item in the list of fruits, where <strong>n</strong> is a keyboard input.</p>
+<p>2. Print the subset of the list of third to fifth element of fruits.</p>
+<p>3. After removing Pineapple and Strawberry from the list<span style="font-family:Courier New,Courier,monospace;">,</span>print the fruit list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+fruits_list = ['Orange', 'Apple', 'Mango', 'Pineapple', 'Strawberry', 'Banana']
+n=int(input())
+print(fruits_list[n-1])
+print(fruits_list[2:5])
+del fruits_list[3]
+del fruits_list[3]
+print(fruits_list)
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to perform following instructions.</p>
+<p>1. Create a list of colors having items Green, Yellow, orange, Red, and Pink.</p>
+<p>2. Add a new element as new_color to the list of colors, where new_color is a keyboard input.</p>
+<p>3. Create another list of numbers 4, 6, 8, 2 and 3.</p>
+<p>4. Combine the list of colors and numbers and print the resulted list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+colors = ["Green", "Yellow", "orange", "Red", "Pink"]
+# To add a new element
+new_color=input()
+colors.append(new_color)
+# Create a list of numbers
+numbers = [4, 6, 8, 2, 3]
+# To join two list
+print(colors + numbers)
+
+
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a program to perform following instructions for a list num = [6, 7, 3, 8, 1, 5, 16, 13, 11, 19, 2, 4, 12, 9, 17, 10].</p>
+<p>1. Print <strong>nth</strong> and 12th element of the list, where <strong>n</strong> is a keyboard input</p>
+<p>2. Print the sum of second, third and sixth elements of the list.</p>
+<p>3. Create a list sub, which is a sublist of num and contains elements from index position 6 to 13.</p>
+<p>4. Create a list new_list by joining num and sub.</p>
+<p>5. Replace the second element of new_list with 20.</p>
+<p>6. Print the new_list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = [6, 7, 3, 8, 1, 5, 16, 13, 11, 19, 2, 4, 12, 9, 17, 10]
+n=int(input())
+# Print nth and 12th element of the list
+print(num[n-1])
+print(num[11])
+## Print the sum of second, sixth and third elements of the list.
+sum_of_three = num[1] + num[2] + num[5]
+print(sum_of_three)
+# Create a list sub, which is a sublist of num and contains elements from index position 6 to 13.
+sub = num[6:14]
+# Join num and sub
+new_list = num + sub
+# Replace the second element of new_list with 20 and print the new_list
+new_list[1] = 20
+print(new_list)
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a program which accepts a sequence of comma-separated numbers as an entered input string and generate a list and a tuple which contains every number of entered string.</p>
+<p>For example, input string is "12,63,78,16,45,86,23,45" and output would be [12, 63, 78, 16, 45, 86, 23, 45] and (12, 63, 78, 16, 45, 86, 23, 45).</p>
+<p><strong>Hint:</strong> Split string values with comma(,)</p>
+
+
+### 💻 Solution (python):
+
+```python
+numstr = input()
+list_numstr = numstr.split(",")
+print(list_numstr)
+print(tuple(list_numstr))
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a program to perform following instructions.</p>
+<p>1. Create a tuple num of numbers from <b>10 to 20</b> including both.<br/>
+2. Print <strong>nth</strong> and 8th element of num, where <strong>n </strong>is a keyboard input.<br/>
+3. Print the sum of second, third and sixth elements of the tuple.<br/>
+4. Create a tuple sub, which is a sublist of num and contains elements from index position 6 to 9.<br/>
+5. Join sub and num and print the resulted tuple as new_t.<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+num = (10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+n=int(input())
+print(num[n-1])
+print(num[7])
+print(num[1] + num[2] + num[5])
+sub = num[5:10]
+new_t = num + sub
+print(new_t)
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p>Write a program to perform following instructions for shapes dictionary which corresponding to below table and accepts a Shape Name as a keys and a side as a value.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 175px;">
+<tbody>
+<tr>
+<td><strong> Shape Name    </strong></td>
+<td><strong> Side    </strong></td>
+</tr>
+<tr>
+<td> Square</td>
+<td> 4</td>
+</tr>
+<tr>
+<td> Triangle</td>
+<td> 3</td>
+</tr>
+<tr>
+<td> Rectangle</td>
+<td> 4</td>
+</tr>
+<tr>
+<td> Pentagon</td>
+<td>  5</td>
+</tr>
+</tbody>
+</table>
+<p>1) Create a shape dictionary.</p>
+<p>2) Print the number of sides of shape_name from the dictionary, where shape_name is a keyboard input.</p>
+<p>3) Remove 'Rectangle' key from the dictionary.</p>
+<p>4) Alter the value of 'Pentagon' as 6.</p>
+
+
+### 💻 Solution (python):
+
+```python
+# Define a dictionary of shapes
+shapes={}
+shapes['Square'] = 4
+shapes['Triangle'] = 3
+shapes['Rectangle'] = 4
+shapes['Pentagon'] = 5
+
+# To print the value corresponding to Triangle
+shape_name=input()
+print(shapes[shape_name])
+
+# To delete Rectangle
+del shapes['Rectangle']
+
+# To alter the value of Pentagon
+shapes['Pentagon'] = 6
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0b60df1efbf32a644051a
+
+## :question: Question 1 (Order: 1)
+
+<p><u><strong>Strings</strong></u></p>
+<p>In python, strings are collection of letters. It can have any keyboard character and can be as long as we want. String values can be used just like integer or float values. </p>
+<p>A string is can be represented by entering a text between two single or double quotation marks. We can store strings in variables like new_string = 'Python is fun !!!'.</p>
+<p>The single quotes, tell python where the string begins and ends. They are not part of the string value’s text.</p>
+<p><strong>Question</strong>: Write a program to create a variable greeting (where greeting is a keyboard input), which stores the string value and display it.</p>
+<p>For example, input string greeting="Morning!" and output is "Morning!".</p>
+
+
+### 💻 Solution (python):
+
+```python
+greeting  = input()
+print(greeting)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>Multiline Strings</strong></u></p>
+<p>While creating a string using single quotes (') or double quotes ("), quote must be end on the same line otherwise we will get an error message.</p>
+<p>To use more than one line of text in string called a multiline string. It uses three quotes (''') and then hit enter between lines.</p>
+<p>For example, multiline_string = '''Python is a high-level <br/>
+programming language'''</p>
+<p>Another way to create a multiline string is to use '\n' which indicates a new line.</p>
+<p>For example, multiline_string = '''Python is a high-level \nprogramming language'''</p>
+<p><strong>Question</strong>: Write a program to print following sentance.<br/>
+                Salesman: Good evening, sir. How can I help you?<br/>
+                Customer: I have come to buy a pair of shoes.<br/>
+<strong>Note:</strong> After every punctuation mark ,there is a space except question mark.</p>
+
+
+### 💻 Solution (python):
+
+```python
+# Print statement
+print('''Salesman: Good evening, sir. How can I help you?
+Customer: I have come to buy a pair of shoes.''')
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>Escape (ignore) Character</strong></u></p>
+<p>If the string itself contains a single quote, python may get confused about the quotes inside the string. So use escape character to display the additional quote.</p>
+<p>For example, to print sentence as "Don't worry" ,output code should be as "print("Don\'t worry")" where "\" is a escape character.</p>
+<p><strong>Question</strong>: Write a program to print "He said: it's over, isn't it?"</p>
+
+
+### 💻 Solution (python):
+
+```python
+print('He said: it\'s over, isn\'t it?')
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>Placeholder text</strong></u></p>
+<p>If we want to display a message using the contents of a variable, we can embed values in a string using "%s", which is like a marker for a value that we want to add later. </p>
+<p>For example, name is a variable having value "Albert" and we have a message to print "My name is Albert". To get it printed, we can write the code as<br/>
+name = "Albert"<br/>
+message = "My name is %s"<br/>
+print(message % name)</p>
+<p><strong>Question</strong>: Write a program to print a message as  "I scored '<strong>N'</strong> points." by using the variable score with value <strong>N</strong> ,where <strong>N</strong> is  a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+score = int(input())
+message = "I scored %s points."
+print(message % score)
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><u><strong>String Concatenation</strong></u></p>
+<p>We can combine string values with operators to make expressions, just as we did with integer and float values. When we combine two strings with the '+' operator, it’s called string concatenation. </p>
+<p>For example, print( 'Hello' + 'World!' ) will print HelloWorld. The expression evaluates to a single string value, 'HelloWorld'. There is no space between the words because there was no space in either of the two concatenated strings.</p>
+<p>The '+' operator works differently on string and integer values because they are different data types. All values have a data type. The data type of the value 'Hello' is a string. The data type of the value 5 is an integer. The data type tells python what operators should do when evaluating expressions. The '+' operator concatenates string values but adds integer values.</p>
+<p><strong>Question</strong>: Write a program to print the single string by joining the two keyboard input words.</p>
+<p>For example, input word1="Good " and word2="evening", so output would be Good evening.</p>
+
+
+### 💻 Solution (python):
+
+```python
+word1=input()
+word2=input()
+print(word1+word2)
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p><u><strong>Repeating a string</strong></u></p>
+<p>To repeat a string , we use '*' (asterisk) with string value and number of time to repeat a string</p>
+<p>For example, multiply the string "Hello" by 5,we use code as 'Hello' * 5 and output of it would be "HelloHelloHelloHelloHello".</p>
+<p>We can multiply a string by 10, just like we multiply the number 5 by 10.</p>
+<p>Python programmers might use this approach to line up strings with a specific number of spaces when displaying messages.<br/>
+If we assign a string having 20 spaces to a variable, we can use it to specify 20 spaces.</p>
+<p><strong>Question</strong>: Write a program to print a string of sequence of <strong>N</strong> asterisk character, where <strong>N</strong> is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+N=int(input())
+print("*" * N)
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p><u><strong>Comments</strong></u></p>
+<p>Any text following a hash mark (#) is a comment in python. Comments are the programmer’s notes about what the code does; they are not written for python but for the programmer.</p>
+<p>Python ignores comments when it runs a program. Programmers usually put a comment at the top of their code to give their program a title. </p>
+<p><strong>Question</strong>: Write a program to print the result of the mathematical operation 36 +<strong> 'a'</strong> ,<strong> </strong>where <strong>'a'</strong> is a keyboard input. and add a comment on top of the code to describe the program.</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+#This program is used to add two numbers
+print(36 + a)
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p><u><strong>Functions</strong></u><br/>
+A function is a kind of mini-program inside our program that contains several instructions for python to execute. The great thing about functions is that we only need to know what they do, not how they do it. Python provides some built-in functions like print() function of previous chapters.</p>
+<p><strong>Function call:</strong></p>
+<p>A function call is an instruction that tells python to run the code inside a function. </p>
+<p>For example, our program calls the print() function to display a string on the screen. The print() function takes the string value which type between the parentheses as input and displays that text on the screen.</p>
+<p>input() function is another example of built-in function. When the input() is called, the program waits for the user to enter text. The text string, that the user enters becomes the value that the function call evaluates to. Function calls can be used in expressions anywhere a value can be used.</p>
+<p>We can assign the value that returned by a function to a variable.<br/>
+For example, name = input()</p>
+<p>The return value of the input() function is the string that the user entered(like their name). If the user enters Albert, the input() function call evaluates to the string 'Albert' and store it to the variable as name.</p>
+<p><strong>Question</strong>: Write a program to read two entered keyboard strings and print the concatenated string of them.</p>
+
+
+### 💻 Solution (python):
+
+```python
+first = input()
+second = input()
+print(first + second)
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p><u><strong>Type conversion methods</strong></u></p>
+<p>Using the int(), float(), and str() functions, we can take a value of one data type and return it as a value of a different data type.</p>
+<p>The int() function takes one argument and returns the argument’s value as an integer.<br/>
+For example, int ( ' 500 ' ) take the string "500" and return the integer value 500.</p>
+<p>we cann't pass any string in it like passing 'five' to int() will result in an error.</p>
+<p>The float() and str() functions will similarly return float and string versions of the arguments passed to them.<br/>
+For example, when the string '50' or the integer 50 is passed to float(), the float will return 50.0.<br/>
+Likewise, when the integer 50 is passed to str(), the string will return '50'. But when the float 50.0 is passed to str(), the string will return '50.0'.</p>
+<p><strong>Question</strong>: Write a program to take the name, age and body weight as a keyboard input for two person's details and print the personal information with the average weight of two persons in below output format.</p>
+<p>For example, if input is as below table, then output would be as below output format.</p>
+<table border="1" cellpadding="1" cellspacing="0" style="width: 300px;">
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+<th scope="col">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alice</td>
+<td>10</td>
+<td>31.5</td>
+</tr>
+<tr>
+<td>Smith</td>
+<td>12</td>
+<td>34.2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Output Format:</strong></p>
+<p>Alice is 10 Years old.</p>
+<p>Smith is 12 years old.</p>
+<p>Average weight is 32.85.</p>
+
+
+### 💻 Solution (python):
+
+```python
+name1 = input()
+age1 = int(input())
+weight1 = float(input())
+name2 = input()
+age2 = int(input())
+weight2 = float(input())
+average_weight = (weight1 + weight2) / 2
+print(name1 + " is " + str(age1) + " years old.")
+print(name2 + " is " + str(age2) + " years old.")
+print("Average weight is " + str(average_weight)+'.')
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p><u><strong>List</strong></u></p>
+<p>Lists are another type of object in python. It is a collection of items like a array. They are used to store a different type of data and an indexed sequence of items.</p>
+<p>List values begin with a left square bracket( '[ ') and end with a right square bracket (']'). This is like how strings begin and end with quotation marks.</p>
+<p>Commas, separate the individual values inside a list. These values are also called items. Lists store several values without using a variable for each one.</p>
+<p>For example, we can create a list of days as</p>
+<p>days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']</p>
+<p>We are familiar with indexing method used in books to direct us to some particular topic. Each topic has been ordered by it’s page number and we can easily find out the topic we want to reach.</p>
+<p>Just like this, List in python are also indexed. Every element in the list is associated with a position number. That is index value.</p>
+<p>In python, the index of the first item in a list is 0, the second item is at index 1, the third item is at index 2 and so on. <br/>
+In the above example, index value of Sunday is 0, index value of Monday is 1 and so on.</p>
+<p><strong>Question</strong>: Write a program to create and print a list animals which containing the elements like Tiger, Lion, Monkey, Elephant and Deer and also print the '<strong>n' </strong>element of list, where '<strong>n'</strong> is a keyboard input and 0-4.</p>
+
+
+### 💻 Solution (python):
+
+```python
+n=int(input())
+animals = ['Tiger', 'Lion', 'Monkey', 'Elephant', 'Deer']
+print(animals)
+print(animals[n])
+```
+
+---
+
+## :question: Question 11 (Order: 11)
+
+<p><u><strong>Accessing List Items</strong></u></p>
+<p>We can access an item of a list by its index number given between the square brackets([]). We can give forward and backward indexing for list.</p>
+<p>For example, list colors = ['red', 'orange', 'yellow', 'blue'] and index value is as below.</p>
+<table border="1" cellpadding="1" cellspacing="0" style="width: 400px;">
+<thead>
+<tr>
+<th scope="col"> Forward Indexing</th>
+<th scope="col"> 0</th>
+<th scope="col"> 1</th>
+<th scope="col"> 2</th>
+<th scope="col"> 3</th>
+</tr>
+</thead>
+<thead>
+<tr>
+<th scope="col"> List colors</th>
+<th scope="col"> 'red'</th>
+<th scope="col"> 'orange'</th>
+<th scope="col"> 'yellow'</th>
+<th scope="col"> 'blue'</th>
+</tr>
+</thead>
+<thead>
+<tr>
+<th scope="col"> Backward Indexing</th>
+<th scope="col"> -4</th>
+<th scope="col"> -3</th>
+<th scope="col"> -2</th>
+<th scope="col"> -1</th>
+</tr>
+</thead>
+</table>
+<p>We can access indexing of list colors by colors[0],colors[1],colors[2] and colors[3] in forward direction and get results accordingy.</p>
+<p>For example,colors[0] will return first element of the list colors i.e. red.</p>
+<p>We can say python list is a zero indexed because the indexes begin at 0 and not 1. If we try accessing an index that is too high to be in the list, it will result in an error.</p>
+<p>We can also access the subset of the list by using a colon (:) inside the square brackets ([ ]). We always includes the first index value, which is given before colon and second last index value which is taken according to last index, which is given after colon.</p>
+<p>For example,  In [1:3], 1 is a first index value and 3 is a last index value. [1:3] shows the items from index position 1 up to index position 2 or in other words, items 1 and 2 only. The output syntax is "print(colors[1:3])" and it will print ['orange', 'yellow']. </p>
+<p><strong>Question</strong>: Write a program to create a list of months from January to December and print the n, n+1,n+2 months as below output format , where '<strong>n'</strong> is a keyboard input and then print a list, which contains September, October and November.</p>
+<p><strong>Output Format:</strong></p>
+<p>1. n month</p>
+<p>2. n+1 month</p>
+<p>3. n+2 month</p>
+<p><strong>Note: </strong>A 'n' should be between 0-10.</p>
+<p>For example, n=0 so output would be as below.</p>
+<p>1. January<br/>
+2. February<br/>
+3. March<br/>
+['September', 'October', 'November']</p>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+n=int(input())
+print('1. ' + months[n]) 
+print('2. ' + months[n+1])
+print('3. ' + months[n+2])
+print(months[8:11])
+```
+
+---
+
+## :question: Question 12 (Order: 12)
+
+<p><strong><u>Add Elements to the list</u></strong></p>
+<p>The append() method will add the value we pass as an argument to the end of the list.</p>
+<p>For example, if we have a list numbers and wants to add 10 in same list, we use syntax as "numbers.append(10)" and it will add a new element 10 to the end of the list numbers.</p>
+<p><strong>Question</strong>: Write a program for a given list num of numbers from 1 to 5 and perform following instructions.</p>
+<p>1) Print the list elements.</p>
+<p>2) Add the numbers n1 and n2 to the same list, where n1 and n2 is a keyboard input.</p>
+<p>3) Print the list with new element.</p>
+
+
+### 💻 Solution (python):
+
+```python
+numbers = [1, 2, 3, 4, 5]
+print(numbers)
+n1=int(input())
+n2=int(input())
+numbers.append(n1)
+numbers.append(n2)
+print(numbers)
+```
+
+---
+
+## :question: Question 13 (Order: 13)
+
+<p><u><strong>Remove Elements from the list</strong></u></p>
+<p>The <span style="font-family:Courier New,Courier,monospace;">del </span>command is used to remove an item from the list,</p>
+<p>For example, consider a list months= [ ’January’, ‘February’, ‘March’, ‘April’, ‘May’, ‘June’, ‘July’ ]</p>
+<p>To remove ‘March’ from this list, try the command as "del months_list[2]" so new list will look like as</p>
+<p>[ ’January’, ‘February’, ‘April’, ‘May’, ‘June’, ‘July’ ]</p>
+<p><strong>Question</strong>: Write a program for a given list num of numbers from 1 to 10 and perform following instructions.</p>
+<p>1) Print the list elements.</p>
+<p>2) Remove the numbers 6 and 8 from this list.</p>
+<p>3) Remove the <strong>n </strong>element from this list, where <strong>n</strong> is a keyboard input.</p>
+<p>4) Print the list after removing elements.</p>
+
+
+### 💻 Solution (python):
+
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n=int(input())
+print(numbers)
+del numbers[n-1]
+del numbers[4]
+del numbers[5]
+print(numbers)
+```
+
+---
+
+## :question: Question 14 (Order: 14)
+
+<p><u><strong>List Concatenation</strong></u></p>
+<p>We can join several lists into one list using the '+' operator, just as we can do with strings, is called list concatenation. </p>
+<p>For example, [1, 2, 3, 4] + ['apples', 'oranges'] will result in the new list as [1, 2, 3, 4, 'apples', 'oranges'].</p>
+<p>We can’t add a list value and a string value with the '+' operator.</p>
+<p><strong>Question</strong>: Write a program for a given two lists as fruits having an elements like Grape, Pineapple and Apple and vegetables having an elements like Tomato, Potato and Carrot and print the combined list of them and a <strong>nth</strong> element of combined llist , where <strong>n</strong> is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+fruits = ['Grape', 'Pineapple', 'Apple']
+vegetables = ['Tomato', 'Potato', 'Carrot']
+n=int(input())
+print(fruits + vegetables)
+print(fruits[n-1])
+```
+
+---
+
+## :question: Question 15 (Order: 15)
+
+<p><u><strong>Tuples</strong></u></p>
+<p>A Tuple is a collection of python objects which are separated by commas and enclosed with parentheses(). In someways a tuple is similar to a list in terms of indexing and operations, the main difference between a tuple and a list is that a tuple cannot  change once you’ve created it.</p>
+<p>For example, numbers = (10, 65, 54, 63, 22, 37, 44)</p>
+<p>We can access third element of the tuple by accesing 2nd index of tuple as numbers(2). We can join two tuples as numbers and colors by code as numbers + colors.</p>
+<p>If we try to replace the first value in the tuple numbers with the number 48 or append any other value, we get an error message.</p>
+<p>We would use a tuple instead of a list because sometimes it is useful to use something that we know can never change. If we create a tuple with two elements inside, it will always have those two elements inside.</p>
+<p>In case of input data being supplied as a string of comma separated items, we can generate a list of items by using split() method and then convert this list into tuple by  tuple() method and syntax as tuple(list_name).</p>
+<p>For example, if data = "10,12,18,15,42,63,98" so syntax as newdata=data.split(',') and print(newdata) will return ['10', '12', '18', '15', '42', '63', '98'] and then conversion syntax as tuple(newdata) will reurn the tuple ('10', '12', '18', '15', '42', '63', '98').</p>
+<p><strong>Question:</strong> Write a program to create a tuple even_numbers having elements as even numbers less than 15 and print this tuple as well as the sum of '<strong>n'th</strong> and fourth element of the tuple, where '<strong>n'</strong> is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+even_numbers = (2, 4, 6, 8, 10, 12, 14)
+print(even_numbers)
+n=int(input())
+print(even_numbers[n-1] + even_numbers[3])
+```
+
+---
+
+## :question: Question 16 (Order: 16)
+
+<p><u><strong>Dictionary</strong></u></p>
+<p>Dictionary is a book that lists the words of a language and gives their meaning likewise in python, a dictionary is a collection of values like a list. But instead of accessing the items in the dictionary with an integer index, we can access them with a keys.</p>
+<p><strong>Syntax of dictionary:</strong></p>
+<p>&lt;dictionary-name&gt; ={key1:value1, key2:value2,....}</p>
+<p>In dictionary, we use colons to separate each key from its value and items are enclosed in braces ({}).</p>
+<p>For example, a dictionary <span style="font-family:Courier New,Courier,monospace;">data </span>can be defined as<br/>
+data = {'Apple':'Red', 'Banana':'Yellow', 'Cherry':'Red'}</p>
+<p><strong>Question</strong>: Write a program to create a dictionary personal_info<span style="font-family:Courier New,Courier,monospace;"> </span>using the following data and acess the age of person by entering the his/her name as a keyboard input and then print it.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 300px;">
+<thead>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diana</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Antony</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Joe</td>
+<td>16</td>
+</tr>
+</tbody>
+</table>
+
+
+### 💻 Solution (python):
+
+```python
+personal_info = {}
+personal_info['Diana']=15
+personal_info['Antony']=12
+personal_info['Joe']=16
+name=input()
+print(personal_info[name])
+
+```
+
+---
+
+## :question: Question 17 (Order: 17)
+
+<p><u><strong>Access Dictionary Data</strong></u></p>
+<p>The values between the curly brackets are key-value pairs of dictionary. The keys are on the left of the colon and the key’s values are on the right of the colon. We can access the values like items in lists by using the key name.</p>
+<p>For example, dictionary data = {'Apple':'Red', 'Banana':'Yellow', 'Cherry':'Red'}, we can access first item of dictionary by syntax as data['Apple']. After executing this syntax, we will get the value corresponding to "Apple" i.e. "Red".</p>
+<p>Also data.keys() will print all the keys name and data.values() will print all the values of keys as a list.</p>
+<p><strong>Question:</strong> Write a program for a given dictionary months having numbers from 1 to 12 as a keys and January to December as a values respectively and perform the following instruction.</p>
+<p>1) Print the value corresponding to the numbers 7, 3, 11 and <strong>n,</strong> where <strong>n</strong> is a keyboard input.<br/>
+2) Print the all values of months as a list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+months = {1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}
+n=int(input())
+print(months[7])
+print(months[3])
+print(months[11])
+print(months[n])
+print(list(months.values()))
+```
+
+---
+
+## :question: Question 18 (Order: 18)
+
+<p><u><strong>Remove or Reassign values</strong></u></p>
+<p>To delete a value of a dictionary, we use its key.</p>
+<p>For example, to remove Apple from dictionary data = {'Apple':'Red', 'Banana':'Yellow', 'Cherry':'Red'},we should use syntax as  del data['Apple'] so resulted dictionary would be  {'Banana':'Yellow', 'Cherry':'Red'}.</p>
+<p>To replace a value in a dictionay, we also use its key.</p>
+<p>For example,<font face="Courier New, Courier, monospace">to</font> replace the color of Cherry from "Red" to "Green" , we should use syntax as data['Cherry'] = "Green".</p>
+<p><strong>Question:</strong> Write a program to create a dictionary score_card as below data and perform following instructions.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 300px;">
+<tbody>
+<tr>
+<td><strong>Subject</strong></td>
+<td><strong>Marks</strong></td>
+</tr>
+<tr>
+<td>Mathematics</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>78</td>
+</tr>
+<tr>
+<td>Science</td>
+<td>72</td>
+</tr>
+<tr>
+<td>Humanities</td>
+<td>75</td>
+</tr>
+</tbody>
+</table>
+<p>1) Print dictionary score_card.</p>
+<p>2) Change the marks of Language to 70.</p>
+<p>3) Print changed dictionary score_card. </p>
+<p>4) Delete the data associted with marks of Humanities.</p>
+<p>5) Print resulted dictionary score_card.</p>
+
+
+### 💻 Solution (python):
+
+```python
+score_card = {}
+score_card['Mathematics']=68
+score_card['Language']=78
+score_card['Science']=72
+score_card['Humanities']=75
+print(score_card)
+score_card['Language']=70
+print(score_card)
+del score_card['Humanities']
+print(score_card)
+
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bae1a44d52cb8455aa638dc
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a program to make a new list which stores the squares of every elements of previous list which containing 5, 6, 2, 1, 4, 3 and print the new list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = [5, 6, 2, 1, 4, 3]
+squares = []
+for i in num:
+  squares.append(i * i)
+print (squares)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a program to print the multiplication table of an entered number using for loop in format as (index x entered_number) = result, where index=1 to 10.</p>
+
+
+### 💻 Solution (python):
+
+```python
+number = int(input())
+for i in range(1, 11):
+  print(str(i) + " x " + str(number) + " = " + str(i * number))
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p>Write a program to print the multiples of 10 in the range of 1 and 100.</p>
+
+
+### 💻 Solution (python):
+
+```python
+for i in range(1, 101):
+  if(i % 10 == 0):
+    print(i)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a program to print the number series 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024 as a list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num_list = []
+number = 1
+while(number < 1024):
+  number = number * 2
+  num_list.append(number)
+print(num_list)
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a program to print the number series 0, 5, 10, 15, 30, 35, 70, 75, 150, 155, 310, 315, 630, 635 as a list.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num_list = []
+number = 0
+while (number <= 630):
+    num_list.append(number)
+    number = number + 5
+    num_list.append(number)
+    number = number * 2
+print(num_list)
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to print the month name with its sequence number in format as "1 January and so on" by using a list of months in order.</p>
+
+
+### 💻 Solution (python):
+
+```python
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+for n in range(12):
+    print(str(n + 1) + "  " + months[n])
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a program to find an average of 10 entered number and print the average value.</p>
+<p><strong>Note:</strong> Take 10 user input by using for loop.</p>
+
+
+### 💻 Solution (python):
+
+```python
+total = 0
+for i in range(10):
+  x = float(input())
+  total = total + x
+average = total / 10.0
+print(average)
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a program to take  an integer inputs from the user until the user presses q and print the average value and product of all numbers.The output format should be required as below.</p>
+<p>Average is &lt;average_value&gt;</p>
+<p>Product of all number is &lt;product_value&gt;</p>
+
+
+### 💻 Solution (python):
+
+```python
+average = 0
+count = 0
+total = 0
+prod=1
+while(True):
+  number = input()
+  if(number == 'q'):
+    break
+  count = count + 1
+  total = total + float(number)
+  prod=prod*float(number)
+average = total / count
+print("Average is " + str(average))
+print("Product of all number is " + str(prod))
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a program to create a list num of 5  input numbers, then an enter a 6th number to delete it from a created list num, if a 6th number found in the list num otherwise keep a orginal list num and print the resulted list according to the condition.</p>
+<p>For example, num=[1,2,3,4,5] and another_num=2 so resulted output list num=[1,3,4,5]</p>
+
+
+### 💻 Solution (python):
+
+```python
+num_list = []
+# read five input numbers using for loop
+for i in range(5):
+  number = input()
+  num_list.append(int(number))
+  
+search = int(input())
+
+for i in range(5):
+  if (num_list[i] == search):
+    del num_list[i]
+    break
+print(num_list)
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p>Write a program to create and print a two lists, one containing all even numbers and other containing all odd numbers in the range of 1 to 100.</p>
+
+
+### 💻 Solution (python):
+
+```python
+even = []
+odd = []
+for i in range(1, 101):
+    if (i % 2 == 0):
+        even.append(i)
+    else:
+        odd.append(i)
+print(even)
+print(odd)
+
+```
+
+---
+
+## :question: Question 11 (Order: 11)
+
+<p>Write a program to create a loop that increments the entered input value by 2 and print the number itself and the incremented values upto an entered limit</p>
+
+
+### 💻 Solution (python):
+
+```python
+number = int(input())
+limit = int(input())
+
+print (number)
+while True:
+    number = number + 2
+    if number> limit:
+         break
+    print (number)
+
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bad2021a2da6b668887810c
+
+## :question: Question 1 (Order: 1)
+
+<p><u><strong>Functions</strong></u></p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">In the programming, function is a sequence of commands, that can be reused together later in a program. Functions run the same code multiple times without having to copy and paste that code over and over again. Instead, we put that code inside a function and call the function whenever we need to. Because we write the code only once in the function, if the function’s code has a mistake, we only have to change it in one place in the program.</p>
+<p dir="ltr">We’ve already used a few functions like print(), input(), str() and int(). Our programs have called these functions to execute the code inside them.</p>
+<p dir="ltr">A function has three parts: a name, parameters and a body.</p>
+<p dir="ltr">The keyword <strong>def </strong>introduces the name of the function, parameter lists are optional and given in the parentheses and a colon (:) follows the closing parenthesis and indicates the start of your functions code suite.</p>
+<p dir="ltr">For example, a function to print Hello can be defined as</p>
+<p>def print_hello ():</p>
+<p>        print(“Hello”)</p>
+<p>print_hello ()</p>
+<p dir="ltr">When we define a function, we specify the instructions for it to run in the function block. Unless we call the function, the instructions in the<strong> def</strong> block will not execute. Later when we call a function, the code inside the <strong>def </strong>block executes.</p>
+<p dir="ltr">In other words, when the execution reaches a <strong>def </strong>statement, it skips down to the first line after the <strong>def</strong> block. But when a function is called, the execution moves inside of the function to the first line of the <strong>def</strong> block.</p>
+<p dir="ltr">In the above example, the code "print_hello()" is the function call. Calling this function runs the print(“Hello”) code, which displays the “Hello”.</p>
+<p dir="ltr">A function’s<strong> def</strong> statement and <strong>def</strong> block must come before we call the function, just as we must assign a value to a variable before we use that variable. If we put the function call before the function definition, we’ll get an error.</p>
+<p dir="ltr">For example,in below code, we called the print_hello() function before function definition,</p>
+<p dir="ltr">print_hello ()</p>
+<p>def print_hello ():</p>
+<p>        print(“Hello”)</p>
+<p dir="ltr">Traceback (most recent call last):<br/>
+  File "&lt;pyshell#0&gt;", line 1, in &lt;module&gt;<br/>
+    print_hello ()<br/>
+NameError: name 'print_hello' is not defined</p>
+<p><strong>Question</strong>: Define a function to print the poem</p>
+<p dir="ltr">Whose woods these are I think I know.</p>
+<p dir="ltr">His house is in the village though;</p>
+<p dir="ltr">He will not see me stopping here</p>
+<p dir="ltr">To watch his woods fill up with snow.</p>
+
+
+### 💻 Solution (python):
+
+```python
+def print_poem():
+  print('''Whose woods these are I think I know.
+His house is in the village though;
+He will not see me stopping here
+To watch his woods fill up with snow.''')
+
+print_poem()
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>Function Parameters</strong></u></p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">Now let’s look at function parameters. We can define a function to say Hello to a particular person by passing their name as function parameters.</p>
+<p>def print_hello ( name ):</p>
+<p>        print(“Hello” + name)</p>
+<p>print_hello (“Tina”)</p>
+<p dir="ltr">In the above example, function parameter is 'name'. When we call 'print_hello()' with an argument 'Tina' in the parentheses, the argument is assigned to the 'name' parameter and the code 'print(“Hello” + name)'  of the function call has been executed with 'Tina' is  assigned to the name parameter so the output would be “Hello Tina”.</p>
+<p dir="ltr"><strong>Question</strong>: Define a function to print sum of two entered numbers, x and y.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+
+def addition(number1, number2):
+  print(number1 + number2)
+
+addition(x, y)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>The return statement</strong></u></p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">A function is often used to return a value using a return statement. A return statement appears only inside <strong>def block </strong>where a function is defined.</p>
+<p dir="ltr">For example, a function to multiply two numbers with a return statement can be define as</p>
+<p>def multiplication ( x, y ):</p>
+<p>    product = x * y</p>
+<p>    return product</p>
+<p>multiplication ( 5, 2 )</p>
+<p dir="ltr">Once the return statement executes, the program execution jumps immediately out of the <strong>def block</strong> (just as the break statement makes the execution jump out of a while block). Any code after the return statement will never happen. The program execution can moves back to the function by the function call. The function call itself will evaluate to the function’s return value.</p>
+<p><strong>Question</strong>: Define a function that returns the smallest number among entered two numbers.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+# A function to find smallest of two number
+def find_smallest(num1, num2):
+  if(num1 < num2):
+    return num1
+  else:
+    return num2
+smallest = find_smallest(x, y)
+print(smallest)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><b><u>Variables and Scope (Local and Global)</u></b></p>
+<p>A variable that’s inside the body of a function can’t be used again when the function has finished running. Because it exists only inside the function, this is called a <strong>local scope</strong>.</p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">A local scope is created whenever a function is called. What makes variables in local scopes special is that they are forgotten when the function returns and they will be re-created if the function is called again. The value of a local variable isn’t remembered between function calls.</p>
+<p dir="ltr">In the below example, we find the product of two numbers and define function for that,</p>
+<p>def multiplication ( x, y ):</p>
+<p>    product = x * y</p>
+<p>    return product</p>
+<p>multiplication ( 5, 2 )</p>
+<p dir="ltr">If we try to print the variable 'product'<font face="Courier New, Courier, monospace"> </font>outside the function definition, it will result in an error.</p>
+<p dir="ltr">If a variable is defined outside the function, it has a different scope or we can say it has a global scope.</p>
+<p dir="ltr">Variables that are assigned and defined outside of the function is called a <strong>global scope</strong>. The global scope is created, when our program begins and destroyed ,when our program terminates.</p>
+<p dir="ltr">When a global scope is destroyed, the all variables related to it are forgotten because if it remembered the values of variables ,then when we next time ran our program, the variables would remember their values from the last time we ran it and it will effect our current program.</p>
+<p dir="ltr">A variable that exists in a local scope is called a local variable, while a variable that exists in the global scope is called a global variable. A variable must be one or the other; it cannot be both local and global.</p>
+<p dir="ltr">Local and global variables can have the same name but they are different variables because they are in different scopes.</p>
+<p dir="ltr">For example,</p>
+<p>product = 100</p>
+<p>def multiplication ( x, y ):</p>
+<p>     product = x * y</p>
+<p>     return product</p>
+<p>multiplication ( 5, 2 )</p>
+<p dir="ltr">In the above code, the variable 'product'<span style="font-family:Courier New,Courier,monospace;"> </span>that defined inside and outside the function definition and they are not same.</p>
+<p><strong>Question</strong>: Define a two variables with name as 'message' and make it global and local, and then write a program to print one variable value as “This variable is in global scope” and  an another variable value as “This variable is in local scope” according to defined variable values and calling function. The output should be displayed first global variable value then the local variable value.</p>
+
+
+### 💻 Solution (python):
+
+```python
+message = "This variable is in global scope"
+
+def print_message():
+  message = "This variable is in local scope"
+  print(message)
+
+print(message)
+print_message()
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><u><strong>Modules</strong></u></p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">Python includes many built-in functions, some functions are written in separate programs called modules. We can use these functions by importing their modules into our program with an <strong>import statement</strong>.</p>
+<p dir="ltr">For example, time module allows us to use various time related functions like localtime(), sleep() etc.</p>
+<p dir="ltr">We can import the module using the statement <strong>import time</strong> and call built-in functions that are available in this module, using the <strong>dot symbol</strong>.</p>
+<p dir="ltr">For example,</p>
+<p>import time</p>
+<p>print(time.asctime())</p>
+<p dir="ltr"><span style="font-family:Arial,Helvetica,sans-serif;">the above code will return the current date and time, as a string in specific format.</span></p>
+<p dir="ltr"><strong>Question</strong>: Write a program to find a factorial of an entered number by importing module.</p>
+
+
+### 💻 Solution (python):
+
+```python
+import math
+x = int(input())
+# Find factorial using math module
+print(math.factorial(x))
+
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bae17d310cab9591c177876
+
+## :question: Question 1 (Order: 1)
+
+<p><u><strong>The for loop</strong></u></p>
+<p>In programming, loops execute a portion of code over and over again until a particular task is complete. Think of the <strong>for statement </strong>as saying, "Execute the code in the following block a certain number of times."</p>
+<p>To print numbers from 1 to 100, we don't need to write print command 100 times, instead of it , we can create a single <strong>for loop </strong>which executes 100 times and in each execution it will print numbers from 1 to 100 one by one.</p>
+<p>A <strong>for statement</strong> begins with the<strong> for keyword</strong>, followed by a "new variable name", then use "<strong>in"</strong> keyword, then followed "<strong>range()" </strong>function that specifies that how many number of times loops will execute and at last a <strong>colon(:)</strong>. </p>
+<p>For example, to print a string "Summer" for 5 times,the code would be as below.</p>
+<pre>
+<code class="language-python">for i in range(5):
+    print("Summer")</code></pre>
+<p>In the above code , when python program reaches to the <strong>for statement, </strong>the <strong>for loop</strong> starts to execute the code of block. After running all the code of block, the execution moves back to the top of the block ( i.e at <strong>for statement</strong> ) to run the code of block again. This process is repeated upto 5 times because given range is 5 and each time the execution goes through the loop is called an <strong>iteration.</strong></p>
+<p>To set a strat point in range, we have to use the range function as range(start, end + 1).</p>
+<p>For example, to print numbers from 1 to 100, range function would be like range(1, 101).</p>
+<p><strong>Question</strong>: Write a program to print the numbers from 20 to 30.</p>
+
+
+### 💻 Solution (python):
+
+```python
+for i in range(20, 31):
+  print(i)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>Looping with List Items</strong></u></p>
+<p>We can use looping on elements of list as below without using range function.</p>
+<p><strong>Syntax:</strong></p>
+<p>for items in &lt;variable_name&gt; : , where &lt;variable_name&gt; contains the items/elements of list</p>
+<p>For example, we have a list of four friends includes James, Monica, Adam and Rachel. <br/>
+i.e. friends_list = ['James', 'Monica', 'Adam', 'Rachel']</p>
+<p>We can use for loop as below to say 'Hello' to friends.</p>
+<pre>
+<code class="language-python">for item in friends:
+    print(‘Hello %s' % item)</code></pre>
+<p>In the above code, for each item of the friends_list ,store the value in the variable 'item' and then print "Hello" with the contents of that variable like Hello James,Hello Monica .....and so on.</p>
+<p><strong>Question</strong>: Write a program to print all the elements of a given list colors, which includes Red, Green, Blue, Black and Yellow.</p>
+
+
+### 💻 Solution (python):
+
+```python
+colors = ['Red', 'Green', 'Blue', 'Black', 'Yellow']
+for item in colors:
+  print(item)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>The Break Statement</strong></u><br/>
+A break statement tells the execution to jump immediately out of the '<strong>for'</strong> block to the first line after the end of the '<strong>for'</strong> block. The break statement is found only inside loops, such as in a '<strong>for' </strong>block.</p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">For example, suppose we have a random list of two digit numbers and if we need to check whether the number 44 is there in the list, then we have to compare each number of the list with 44 and when we find the number ,no need to proceed further, So we can put a break statement in block of <strong>for loop</strong>. See below.</p>
+<pre>
+<code class="language-python">numbers_list=[5,2,44,10,25]
+for i in numbers_list:
+   if (i == 44):
+       print(“Found”)
+       Break</code></pre>
+<p dir="ltr"><strong>Question</strong>: Write a program to find a sum of first five numbers from the given list numbers=[25, 33, 42, 28, 53, 66, 75, 36, 80, 40] and display an output as "Sum of first five number is &lt;answer&gt; ".</p>
+
+
+### 💻 Solution (python):
+
+```python
+numbers = [25, 33, 42, 28, 53, 66, 75, 36, 80, 40]
+count = 0
+total = 0
+for i in numbers:
+  total = total + i
+  count = count + 1
+  if(count == 5):
+    break
+print("Sum of first five number is " + str(total))
+
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>Nested loops</strong></u></p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">If we define loops inside another loop is called nested loops.</p>
+<p dir="ltr">For example, if we have a shapes as Pyramid and Sphere with colors as Blue, Green and Yellow and want to print shape details with its color variations, then code is as below and output is also as below.</p>
+<pre>
+<code class="language-python">shapes = ['Sphere', 'Pyramid']
+colors = ['Blue', 'Green', 'Yellow']
+for shape in shapes:
+   print(shape)
+   print("--------------------")
+   for color in colors:        
+       print(color + " " + shape)
+   print("--------------------")
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre>
+<code class="language-python">Sphere
+--------------------
+Blue Sphere
+Green Sphere
+Yellow Sphere
+--------------------
+Pyramid
+--------------------
+Blue Pyramid
+Green Pyramid
+Yellow Pyramid
+--------------------</code></pre>
+<p><strong>Question</strong>: Write a program that ask user for an input number, which is less than 25 and if entered number is present in num = [16, 8, 12, 5, 7, 10, 11, 9, 13, 15] then print numbers from 1 to the entered number otherwise print “Not found”.</p>
+
+
+### 💻 Solution (python):
+
+```python
+num = [16, 8, 12, 5, 7, 10, 11, 9, 13, 15]
+isPresent = False
+input_num  = int(input())
+for i in num:
+  if i == input_num:
+    isPresent = True
+    for j in range(1, i + 1):
+      print(j)
+if(isPresent == False):
+  print("Not found")
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><strong><u>The While Loop</u></strong></p>
+<p><strong>While loop </strong>is an unlike a <strong>for loop</strong>, it repeats as long as a certain condition is True. When the python program execution reaches a <strong>while statement</strong>, it checks the condition next to the <strong>while keyword</strong>. If the condition evaluates to True, the execution moves inside the <strong>while block</strong>. If the condition evaluates to False, the execution moves past the <strong>while block</strong>.</p>
+<p>For example, the program to increment the value of x and y based on the conditions like x&lt;35 and y&lt;50,</p>
+<pre>
+<code class="language-python">x = 28
+y = 4
+
+while (x &lt; 35 and y &lt; 50):
+    x = x + 1
+    y = y + 1
+    print(x, y)</code></pre>
+<p><strong>Output:</strong></p>
+<pre>
+<code class="language-python">29 45
+30 46
+31 47
+32 48
+33 49
+34 50</code></pre>
+<p><strong>Question:</strong> Write a program to print all the numbers between x and y (including x and y) where x and y is entered input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+num = 0
+while(x <= y and num <= y):
+  if(x <= num <= y):
+    print(num)
+  num = num + 1
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5baa729e4813f0a1c5497a17
+
+## :question: Question 1 (Order: 1)
+
+<p>In a procedural programming, the entire code is written into one long procedure even though it might contain functions and subroutines. It is not manageable as both data and logic, get mixed together. But when we talk about object-oriented programming, the program is split into self-contained objects or several mini-programs.</p>
+<p><meta charset="utf-8"/></p>
+<p dir="ltr">When working on complex programs in particular, objects are a way of organizing code in a program and breaking things down to make it easier to think about complex ideas.The object-oriented programming makes your code more readable, which in turn makes it more maintainable.</p>
+<p>Python is an object-oriented programming language. One of the most important concepts in object-oriented programming is the distinction between classes and objects, which are defined as follows:</p>
+<p>Class --&gt; A blueprint created by a programmer for an object. This defines a set of properties that will characterize any object. We can think of class as a way to classify objects into groups.</p>
+<p dir="ltr">Object --&gt; An instance of a class. This is the realized version of the class, where the class is manifested in the program.</p>
+<p>For example: let’s think of humans as a class which posses a set of properties like name ,age etc. then we all are different instances, that are objects of the class human, with different properties like name and age.</p>
+<p><strong>Question:</strong> _____ represents an entity in the real world with its identity and behaviour.</p>
+<p dir="ltr">a) A method</p>
+<p dir="ltr">b) An object</p>
+<p dir="ltr">c) A class</p>
+<p dir="ltr">d) An operator</p>
+
+
+### 📝 Answer Options:
+
+1. ❌ 
+<p>A method</p>
+
+
+2. ✅ **Correct Answer:**
+<p dir="ltr">An object</p>
+
+
+3. ❌ 
+<p>A class</p>
+
+
+4. ❌ 
+<p>An operator</p>
+
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><strong><u>Defining classes, objects and class methods</u></strong></p>
+<p>A class in python is the blueprint from which specific objects are created.</p>
+<p>We start the class definition with the class keyword, followed by the class name and a colon.</p>
+<pre>
+<code class="language-python">class Lion:
+      pass</code></pre>
+<p>In above code, class name is Lion and pass is a block of code of class Lion. The pass statement in python is used when a statement is required syntactically but we don't want any command or code to execute. The pass statement is a null operation; nothing happens when it executes.</p>
+<p>With the same blueprint (ie, class), we can create several instances and these can be considered as Objects  Like we can take the Lion class defined above and use it to create an object or instance of it.</p>
+<p>jake = Lion()</p>
+<p>Here, we initialized the object 'Jake' as an instance of the class by setting it equal to Lion()</p>
+<p>Now creating a class is incomplete without some functionality. So functionalities can be defined by setting various attributes which acts as a container for data and functions related to those attributes.</p>
+<pre>
+<code class="language-python">class Lion:
+
+   def walk(self):
+        print("The lion is walking")
+
+   def roar(self):
+        print("The lion is roaring")
+
+jake = Lion()</code></pre>
+<p>In the above code, we defined a two functions walk() and roar() for the class Lion because these functions are indented under the class Lion, they are called methods. Methods are a special kind of function that are defined within a class.</p>
+<p>In next lesson, we will discuss more about the parameter self used in function (method) definition.</p>
+<p><strong>Question:</strong> Write a code to perform the followings. </p>
+<p>1) Define a class named Bird </p>
+<p>2) Add a function named fly which print message as "The bird is flying".</p>
+<p>3) Create an object of class Bird and call the function to get the output as The bird is flying.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Bird:
+	def fly(self):
+		print("The bird is flying")
+
+b1 = Bird() #making object
+b1.fly() #calling function fly
+```
+
+### 📝 Answer Options:
+
+1. ❌ 
+
+
+2. ❌ 
+
+
+3. ❌ 
+
+
+4. ❌ 
+
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>Methods Attributes and Self Keyword</strong></u></p>
+<pre>
+<code class="language-python">class Lion:
+    def walk(self):
+        print("The lion is walking")
+
+    def roar(self):
+        print("The lion is roaring")
+jake = Lion()</code></pre>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">In the above example, we initialized the object jake as an instance of the class Lion. There is a new keyword self in the function definition, which was not present in the normal function definition. As soon as we define a new class  and a new class object is created with the same name. This class object allows us to access the different attributes of that class. To access its own properties we use the keyword self, It is mandatory to pass self as a parameter ,if the method is inside the class.</span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">let’s use the two methods  of class Lion with the object jake as below.</span></p>
+<pre>
+<code class="language-python">jake = Lion()
+jake.walk()
+jake.roar()</code></pre>
+<p>And output would be like,<br/>
+The lion is walking<br/>
+The lion is roaring</p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">The class Lion using the two methods walk() and roar(). We called these using the dot operator (.), which is used to reference an attribute of an object. In this case, the attribute is a method and it’s called with parentheses like jake.walk()</span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">Because the keyword self was a parameter of the methods as defined in the Lion class, the jake object gets passed to the methods. The self parameter ensures that the methods have a way of referring to object attributes. When we call the methods, however, nothing is passed inside the parentheses, the object jake is being automatically passed with the dot operator.</span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;"><strong>Question</strong>: Write a program to define a class Computer, with two methods system_in() and system_out() as below.</span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">1) The method system_in() should ask for a username as an input and print string as "Welcome username".</span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">2) The system_out() should display the string  as “Thank you for coming”. </span></p>
+<p><span style="font-family:Arial,Helvetica,sans-serif;">The output should be display by creating an instance of the class and call the methods.</span></p>
+<p><font face="Arial, Helvetica, sans-serif"><strong>Note:</strong> If username=John so output should be Welcome John and Thank you for coming!! in separate lines</font></p>
+
+
+### 💻 Solution (python):
+
+```python
+class Computer:
+    def system_in(self):
+        Name=input()
+        print("Welcome"+" "+ Name)
+    def system_out(self):
+        print("Thank you for coming!!")
+        
+sys1 = Computer()
+sys1.system_in()
+sys1.system_out()
+
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>__init__() : The Constructor Method</strong></u></p>
+<p>The constructor method is used to initialize data. It is run as soon as an object of a class is  created. Also known as the __init__ method, it will be the first definition of a class and looks like this:</p>
+<pre>
+<code class="language-python">class Lion:
+      def __init__(self):
+             print("This is the constructor method.")</code></pre>
+<p>If we add the above __init__ method to the Lion class in the previous example, the program would execute the print statement inside the constructor method, whenever we create a new object.</p>
+<p>Let’s create a constructor method for Student class that passes parameters to assign a variables to an object.</p>
+<pre>
+<code class="language-python">class Student:
+    def __init__(self, first, last, roll_no):
+        self.first_name = first
+        self.last_name = last
+        self.roll_no = roll_no
+    
+    def exam(self):
+        reister_no = self.first_name + str(self.roll_no)
+        print("Exam registration number is: " + "2018" + reister_no)
+
+student1 = Student('Sophia', 'John', 5)
+print(student1.first_name)
+student1.exam()
+
+Output:
+Aleena
+Exam registration number is: 2018Aleena5</code></pre>
+<p>In the above code, a first, last and roll_no is used as a parameters of a constructor and we can set first name, last name and roll number to them using self keyword. Self is the instance which means whenever we write self.first_name = first, it is the same as student1.first_name = “Amal” ,where we have used instances of Student class as student1 and pass the values specified in the __init__() method. The __init__() method takes the instances as an arguments always. Instead of doing it manually, it will be done automatically now. The exam() method is defined to generate a registration number for each student. After executing the above code, the output shows as name of a person with registration number.</p>
+<p><strong>Question:</strong> Write a program to create a constructor for a Circle class, which initialize with radius and includes two methods as find_area() and find_circumference() to find the area of a circle and find the circumference of a circle respectively.The output shows the result of area and circumference by creating an object of a class Circle and calling methods of it.</p>
+
+
+### 💻 Solution (python):
+
+```python
+class Circle:
+    def __init__(self, r):
+        self.radius = r
+        
+    def find_area(self):
+        self.area = 3.14 * self.radius * self.radius
+        print("Area: %.1f"%(self.area))
+    
+    def find_circumference(self):
+        self.circumference = 2 * 3.14 * self.radius
+        print("Circumference: %.1f"%(self.circumference))
+        
+cir = Circle(10)
+cir.find_area()
+cir.find_circumference()
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p><strong><u>Inheritance</u></strong><br/>
+If a class is a part of another class, then it’s a child of that class and the other class is its parent. Classes can be both children of and parents to other classes.</p>
+<pre>
+<code class="language-python">class Children():
+    pass
+class Student(Children):
+    pass</code></pre>
+<p>Inheritance is when a class uses code,which constructed within another class. If we think of inheritance in terms of biology, we can think of a child inheriting certain traits from their parent. That is, a child can inherit a parent’s height or blood group. Children also may share the same last name with their parents. </p>
+<p>Classes called child classes or subclasses are inherited methods and variables from parent classes or base classes. We can think of a parent class called Parent, that has a variables for last_name, height and blood group ,which child class called Child can inherit from the Parent. Because the Child subclass is inheriting from the Parent base class, the Child class can reuse the code of Parent, allowing the programmer to use fewer lines of code and decrease the redundancy.</p>
+<p>For example,  we define a class Polygon as a parent class and initiate it with the list containing sides of the shape, which is 0. Define a method, inputSides(), to change the values of the list for this class.</p>
+<pre>
+<code class="language-python">class Polygon:
+    def __init__(self, no_of_sides):
+        self.n = no_of_sides
+        self.sides = [0 for i in range(no_of_sides)]
+        
+    def inputSides(self):
+        self.sides = [float(input("Enter side "+str(i+1)+" : ")) for i in range(self.n)]</code></pre>
+<p>Now, we define another class Square with number of sides 4. Square is a child class of the class Polygon. Inside class definition, define a method to find area of the shape.</p>
+<pre>
+<code class="language-python">class Square(Polygon):
+    def __init__(self):
+        Polygon.__init__(self,4)
+        
+    def findArea(self):
+        a = self.sides[0]
+        self.area = a * a
+        print("Area is " + str(self.area))</code></pre>
+<p>Next, create an object 's' for Square class to find an area of the square. To get the output, we should give the input values for the sides, which can be done by calling inputSides() method of the parent class and then find the area of the square by calling findArea() method of the child class.</p>
+<pre>
+<code class="language-python">s = Square()
+s.inputSides()
+s.findArea()</code></pre>
+<p><strong>Question</strong>: Following details are given.</p>
+<p>1) Created a super class Person which is initiated with name and includes a method to check, if this person is a student or not.</p>
+<p>2) Created an object of a child class and called method to get the output. The output shows person details, if the person is a student otherwise print "Data not available".</p>
+<p>Write a program to define a child class Student with its methods by performing below instructions.</p>
+<p>1) Create a new class Student which is a child class of Person and initiated with roll_no and gender. It inherrit the constructor of parent class ,where name=Sam.</p>
+<p>2)This class includes a two methods as below.</p>
+<p>       i) An isStudent() method is used to check a person is a student or not and return a True value for that.</p>
+<p>       ii) A displayInfo() method  is used to print the personal information of student like name, roll number and gender as expected output.</p>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+        
+    def isStudent(self):
+        self.isStudent = False
+
+class Student(Person):
+    def __init__(self, roll_no, gender):
+        Person.__init__(self, 'Sam')
+        self.roll_no = roll_no
+        self.gender = gender
+        
+    def isStudent(self):
+        self.isStudent = True
+        return self.isStudent
+    
+    def displayInfo(self):
+        print("Name: " + self.name)
+        print("Roll number: " + str(self.roll_no))
+        print("Gender: " + self.gender)
+        
+student1 = Student(15, "Male")
+if(student1.isStudent()):
+  student1.displayInfo()
+else:
+  print("Data not available")
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0b846f1efbfe0d644058c
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a program to read a number from user and print "You have reached the maximum limit" if the number is greater than 60 else print "You are under limit".</p>
+
+
+### 💻 Solution (python):
+
+```python
+user_input = int(input())
+# if-else statement
+if (user_input > 60):
+  print("You have reached the maximum limit")
+else:
+  print("You are under limit")
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a program to read an entered value as an amount of money and if the amount is greater than 1000, the program should display "You are rich" otherwise print "You are not rich".</p>
+
+
+### 💻 Solution (python):
+
+```python
+money = input()
+if int(money) > 1000:        
+  print("You are rich") 
+else:
+  print("You are not rich") 
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p>Write a program to find the greatest number among the two numbers ( x and y) without using else option.</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+# if statement
+if(x > y):
+  print(x)
+# if statement
+if(y > x):
+  print(y)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a program to find the greatest of two numbers (x and y) by using else option</p>
+
+
+### 💻 Solution (python):
+
+```python
+x = int(input())
+y = int(input())
+# if-else statement
+if(x > y):
+  print(x)
+else:
+  print(y)
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a program to check whether an entered number is less than 10 or greater than 70 and print the message “Too few or Too many” if the condition is true.<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+user_input = int(input())
+# Check user input
+if(user_input > 70):
+  print("Too many")
+elif(user_input < 10):
+  print("Too few")
+
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to check whether the amount of money, which is contained in the variable 'money' is between 100 and 500 ( both numbers are inclusive ) or between 1,000 and 5,000 ( both numbers are inclusive ) and print "Yes" if condition is satisfied otherwise print "No".</p>
+
+
+### 💻 Solution (python):
+
+```python
+money = int(input())
+# Check the condition
+if((money >= 100 and money <= 500) or (money >= 1000 and money <= 5000)):
+    print("Yes")
+else:
+    print("No")
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a program to read an input value as a marks and prints "Above average" ,if an entered input is between 50 and 60 (both numbers are not included).</p>
+
+
+### 💻 Solution (python):
+
+```python
+marks = int(input())
+# if statements
+if (50 < marks < 60):
+  print("Above average")
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a program to read an entered input value and print "Out of range" ,if the entered value is less than zero or print "Proceed", if the entered value is greater than 100.</p>
+
+
+### 💻 Solution (python):
+
+```python
+user_input = int(input())
+if(user_input < 0 or user_input > 100):
+  print("Out of range")
+else:
+  print("Proceed")
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a program to check whether a candidate is eligible or not based on the below conditions and print messag as 'Eligible' , if a below conditions are satisfied otherwise print 'Not Eligible'.</p>
+<p>Eligible conditions for an admission of a student to a high school course :<br/>
+      1.  Marks in mathematics greater than or equal to 60<br/>
+      2.  Marks in science greater than or equal to 50<br/>
+      3.  Marks in language is greater than or equal to 40<br/>
+      OR<br/>
+      Total marks in mathematics and science is greater than or equal to 150</p>
+<p><strong>Note</strong>: User input marks sequence as a mathematics, science and language </p>
+
+
+### 💻 Solution (python):
+
+```python
+math = int(input())
+science = int(input())
+language = int(input())
+if ((math >= 60 and  science >= 50 and language >= 40) or math + science >= 150):
+    print("Eligible")
+else:
+    print("Not Eligible")
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p>Write a program to check if a character is a vowel or consonant.</p>
+<p><strong>Note</strong>:An entered character should be in lower case.</p>
+
+
+### 💻 Solution (python):
+
+```python
+char = input()
+if (char == "a" or  char == "e" or char == "i" or char == "o" or char == "u"): 
+    print("Vowel")
+else:
+    print("Consonant")
+```
+
+---
+
+## :question: Question 11 (Order: 11)
+
+<p>Write a program to print the number of days of an entered month.</p>
+
+
+### 💻 Solution (python):
+
+```python
+month = input()
+if (month == "January" or month == "March" or month == "May" or month == "July" or month == "August" or month == "October" or month == "December" ): 
+    print("31 Days")
+elif (month == "April" or month == "June" or month == "September" or month == "November" ):
+    print("30 Days")
+elif (month == "February" ):
+    print("28 or 29 Days")
+else:
+    print("Invalid Month")
+```
+
+---
+
+## :question: Question 12 (Order: 12)
+
+<p>Write a program to read the denomination value of a banknote from the user and display the name of the individual entry,which appears on the banknote of the entered amount, if entry exist in the below list otherwise print 'Invalid Entry'.</p>
+<table align="left" border="1" cellpadding="1" cellspacing="1" style="width: 400px;">
+<tbody>
+<tr>
+<td><strong>Individual Entry  </strong></td>
+<td><strong>Denomination value of a banknote</strong></td>
+</tr>
+<tr>
+<td>George Washington</td>
+<td>$1</td>
+</tr>
+<tr>
+<td>Thomas Jefferson </td>
+<td>$2</td>
+</tr>
+<tr>
+<td>Abraham Lincoln</td>
+<td>$5</td>
+</tr>
+<tr>
+<td>Alexander Hamilton</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>Andrew Jackson</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>Ulysses S. Grant </td>
+<td>$50</td>
+</tr>
+<tr>
+<td>Benjamin Franklin</td>
+<td>$100</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+denom = int(input())
+if (denom == 1): 
+    print("George Washington")
+elif (denom == 2): 
+    print("Thomas Jefferson")
+elif (denom == 5): 
+    print("Abraham Lincoln")
+elif (denom == 10): 
+    print("Alexander Hamilton")
+elif (denom == 20): 
+    print("Andrew Jackson")
+elif (denom == 50): 
+    print("Ulysses S. Grant")
+elif (denom == 100): 
+    print("Benjamin Franklin")
+else:
+    print("Invalid Entry")
+```
+
+---
+
+## :question: Question 13 (Order: 13)
+
+<p>Write a program to read a month name and day(1-31) from the user input and print the season name from the below table against the entered month-day value, which exist in below table month-day range.  The output should be shown as '&lt;season_name&gt; Season' like Spring Season for spring result.</p>
+<p><strong>Note: </strong>In below table, take a range of month and day for every season like for a sprimng season consider range as March 20 to June 20.</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 300px;">
+<thead>
+<tr>
+<th scope="col">Season</th>
+<th scope="col">First day</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spring</td>
+<td>March 20</td>
+</tr>
+<tr>
+<td>Summer</td>
+<td>June 21</td>
+</tr>
+<tr>
+<td>Fall</td>
+<td>September 22</td>
+</tr>
+<tr>
+<td>Winter</td>
+<td>December 21</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+
+
+### 💻 Solution (python):
+
+```python
+month = input()
+day = int(input())
+
+if (((month == 'March') and (day >= 20 and day <= 31)) or((month == 'April' or month == 'May') and (day >= 1 and (day <= 31 or day<=30))) or ((month == 'June') and (day >= 1 and day <= 20))):
+    print("Spring Season")
+
+elif (((month == 'June') and (day >= 21 and day <= 30)) or((month == 'July' or month == 'August') and (day >= 1 and (day <= 31 or day<=30))) or ((month == 'September') and (day >= 1 and day <= 21))):
+    print("Summer Season")
+
+elif (((month == 'September') and (day >= 22 and day <= 30)) or((month == 'October' or month == 'November') and (day >= 1 and (day <= 31 or day<=30))) or ((month == 'December') and (day >= 1 and day <= 20))):
+    print("Fall Season")
+
+elif (((month == 'December') and (day >= 21 and day <= 31)) or((month == 'January' or month == 'February') and (day >= 1 and (day <= 31 or day<=30))) or ((month == 'March') and (day >= 1 and day <= 19))):
+    print("Winter Season")
+```
+
+---
+
+## :question: Question 14 (Order: 14)
+
+<p>Write a program to read an week number and print the week day against the entered week number.</p>
+
+
+### 💻 Solution (python):
+
+```python
+week_num = int(input())
+
+if (week_num == 1):
+    print("Sunday")
+elif (week_num == 2):
+    print("Monday")
+elif (week_num == 3):
+    print("Tuesday")
+elif (week_num == 4):
+    print("Wednesday")
+elif (week_num == 5):
+    print("Thursday")
+elif (week_num == 6):
+    print("Friday")
+elif (week_num == 7):
+    print("Saturday")
+else:
+    print("Invalid")
+```
+
+---
+
+## :question: Question 15 (Order: 15)
+
+<p>Write a program to check an entered length and breadth is for a square or not and print 'Square', if it is for square otherwise print 'Rectangle'.</p>
+<p><strong>Note</strong>: User input sequence as a length and breadth. </p>
+
+
+### 💻 Solution (python):
+
+```python
+length = int(input())
+breadth = int(input())
+if (length == breadth):
+  print ("Square")
+else:
+  print ("Rectangle")
+```
+
+---
+
+## :question: Question 16 (Order: 16)
+
+<p>Write a program to take a 3 inputs as an age of 3 people and determine the youngest among them. The output format should be required as 'Youngest age is 5', if age=5 is smaller than others.</p>
+
+
+### 💻 Solution (python):
+
+```python
+first_person = int(input())
+second_person = int(input())
+third_person = int(input())
+message = "Youngest age is %s"
+if (first_person < second_person and first_person < third_person):
+  print (message % first_person)
+elif (second_person < first_person and second_person < third_person):
+  print (message % second_person)
+elif (third_person < first_person and third_person < second_person):
+  print (message % third_person)
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0bbe3f1efbfc5334405fd
+
+## :question: Question 1 (Order: 1)
+
+<p><u><strong>Python Operators</strong></u><br/>
+The basic symbols like (+,-,*,/ etc) used to perform mathematical operations are called operators.</p>
+<p>Operators tell python what to do with the numbers surrounding them. The plus sign(+) adds numbers, the minus sign (-) subtracts numbers, the asterisk (*) multiplies numbers, and the slash (/) divides numbers. </p>
+<p>We can use python shell to perform mathematical calculations like 5 + 6, 6 / 2 etc.</p>
+<p>For example, if add two numbers as 300 and 100, the output code would be "print(300 + 100)" and output will be 400. </p>
+<p><strong>Note</strong>: Python use print function to display the content.</p>
+<p><strong>Question: </strong>Write a program to print the following mathematical operations in different lines.<br/>
+1. Add 200 and 300<br/>
+2. Divide 250 by 50<br/>
+3. Subtract 100 from 500<br/>
+4. Product of '<strong>a'</strong> and 50<strong> </strong>,where '<strong>a' </strong>is a keyboard input</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print(200 + 300)
+print(250 / 50)
+print(500 - 100)
+print(a * 50)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p><u><strong>Evaluating Expressions</strong></u><br/>
+Expressions are made up of values (the numbers) connected by operators (the math signs) that produce a new value.</p>
+<p>For example, 10 + 30 is an expression where values 10 and 30 are connected by an operator ‘ + ‘.</p>
+<p>When a computer solves the expression 10 + 30 and returns the value 40, it has evaluated the expression.</p>
+<p>Evaluating an expression reduces the expression to a single value, just like solving a math problem reduces the problem to a single number.</p>
+<p>When python evaluates an expression, it has an order of precedence in which these are going to be calculated.</p>
+<p>The rules of evaluating an expression are follows.</p>
+<ul>
+<li>1) Multiplication and division always go before addition and subtraction.</li>
+<li>2) We use parentheses to control the order of operations.</li>
+<li>3) Parts of the expression inside parentheses are evaluated first.</li>
+<li>4) Parentheses can be nested, which means that there can be parentheses inside parentheses.</li>
+<li>5) Python evaluates the innermost parentheses first, then the outer ones.</li>
+</ul>
+<p>For example,an expression 7 + 6 * 2 + 4 evaluates to 23 because 6  * 2 (=12) is evaluated first and then do addition 7+12+4(=23).</p>
+<p>An expression (7 + 6) * (2 + 4) evaluates to 78 because the (7 + 6) and (2 + 4) inside parentheses are evaluated before multiplication so (7 + 6)=13 and (2 + 4)=6 and then 13*6=78.</p>
+<p><strong>Question</strong>: Write a program to print the result of the following statement.</p>
+<p>Add 10 to 8, then Multiply the result by 2, then subtract 11 from the result and divide it by <strong>'a'</strong> where a is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print((((10 + 8) * 2) - 11) / a)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p><u><strong>Variables</strong></u></p>
+<p>The word variable in programming, describes a place to store information such as numbers, text, lists of numbers, list of texts etc.<br/>
+When an expression evaluates to a value, we can use that value later by storing it in a variable.</p>
+<p><strong>Syntax to assign a value to a variable: </strong></p>
+<p>&lt;name of variable&gt; = &lt;value&gt; , where "=" is a assignment operator</p>
+<p>For example,  price = 500</p>
+<p><strong>Question: </strong>Write a program to assign the value '<strong>a' </strong>(where '<strong>a'</strong> is a keyboard input) to the variable 'first', then assign the contents of 'first' to variable 'second' and print the variable 'second'.</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+first = a
+second = first
+print(second)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p><u><strong>Naming a variable </strong></u><br/>
+In python, all variables and functions name are case sensitive means MYVAR is not the same as MyVar nor  myvar. It is possible to have multiple distinct variables with the same name but different casing. </p>
+<p><strong>Rules for naming of variable: </strong></p>
+<p>1) Variable names can be made up of letters, numbers, and the underscore character ( _).</p>
+<p>2) They can’t start with a number. we can use anything from single letters (such as a) to long sentences for variable names.</p>
+<p>3) A variable can’t contain a space, so use an underscore to separate words.</p>
+<p>4) It is not allowed to use keywords as variable name like print, for, while,if etc. keywords of python not used as a variable name because they are used to do some specific function in python program like loop function, condition function etc.</p>
+<p>For examples, someVariable = 10, Total_price = 100</p>
+<p><strong>Question:</strong>  For a given gallon value <strong>G</strong>, write a program to calculate and display the car's MPG by assigning a value 100 to the total number of miles he or she has driven and <strong>G</strong> to the gallons of gas used.</p>
+<p><strong>Note: </strong>A car’s MPG can be calculated as Car's MPG = miles driven / gallons of gas used</p>
+
+
+### 💻 Solution (python):
+
+```python
+miles_driven = 100
+G=int(input())
+MPG = miles_driven / G
+print(MPG)
+```
+
+---
+
+
+
+# 📚 Questions for ID: 5bb0b29ef1efbfcf6a44049d
+
+## :question: Question 1 (Order: 1)
+
+<p>Write a program to add two numbers as 100 and '<strong>a'</strong> (where a is keyboard input) and prints the result of it.</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print(100 + a)
+```
+
+---
+
+## :question: Question 2 (Order: 2)
+
+<p>Write a code to find and display the result of the following expressions of python.</p>
+<p>1) 80 / 16</p>
+<p>2) 23 + 15 – 20</p>
+<p>3) 4 * 4 * a ,where '<strong>a'</strong> is a keyboard input</p>
+<p>4) 15<sup>2</sup> % 6</p>
+<p>5) 25<sup>3</sup></p>
+<p><strong>Hint:</strong> To calculate the power of  number use two asterisks(**) as (number**power)</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print(80 / 16)
+print(23 + 15 - 20)
+print(4 * 4 * a)
+print((15 ** 2) % 6)
+print(25 ** 3)
+```
+
+---
+
+## :question: Question 3 (Order: 3)
+
+<p>Write a program to find and display the average of two numbers 50 and '<strong>a'</strong>, where <strong>'a'</strong> is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print((50 + a) / 2)
+```
+
+---
+
+## :question: Question 4 (Order: 4)
+
+<p>Write a program to convert the following instructions into a single line equation and print the result for them.</p>
+<p>1) Add 15 to 30, then Multiply the result by 5, then subtract 10 from the result and divide it by 5.</p>
+<p>2) Divide 10 by 5, then multiply the result by 3 and add add <strong>'a' </strong>(where <strong>'a'</strong> is a keyboard input) to the result. </p>
+<p>3) Add 45 and 15, the multiply the result by 2 and subtract 100 from the result</p>
+
+
+### 💻 Solution (python):
+
+```python
+a=int(input())
+print(((((15 + 30) * 5) - 10) / 5))
+print((((10 / 5) * 3) + a))
+print(((45 + 15) * 2) - 100)
+
+```
+
+---
+
+## :question: Question 5 (Order: 5)
+
+<p>Write a program to find and display the area of a square of side =<strong> 'a'</strong> meters, where '<strong>a'</strong> is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+# Assign keyboard input to the variable side
+a = int(input())
+side = a
+# Equation for finding area
+area = side * side
+# print area
+print(area)
+```
+
+---
+
+## :question: Question 6 (Order: 6)
+
+<p>Write a program to calculate and display the area of the rectangle using variables length with values L cm and width with values 5 cm. </p>
+
+
+### 💻 Solution (python):
+
+```python
+L=int(input())
+# Assign L to the variable length
+length = L
+# Assign 5 to the variable width
+width = 5
+# Calculate area
+area = length * width
+# Print area
+print(area)
+```
+
+---
+
+## :question: Question 7 (Order: 7)
+
+<p>Write a program to find and print the sum of squares of x and y, where x = 6 and y is a keyboard input.</p>
+
+
+### 💻 Solution (python):
+
+```python
+# assign 6 to the variable x
+x = 6
+# assign keyboard input to the variable y
+y = int(input())
+# print the result
+print(x ** 2 + y ** 2)
+```
+
+---
+
+## :question: Question 8 (Order: 8)
+
+<p>Write a program to find and display the speed of the object, if an object traveled 320 meters in T seconds.</p>
+
+
+### 💻 Solution (python):
+
+```python
+# Assign 320 to the variable distance
+distance = 320
+# Assign T to the variable time
+T=int(input())
+time = T
+# Calculate speed
+speed = distance / time
+# Print speed
+print(speed)
+```
+
+---
+
+## :question: Question 9 (Order: 9)
+
+<p>Write a program to calculate and print the value of 'Q' by using of below formula and a fixed values of C and D as 50 and 30 respectively and H as a keyboard input.</p>
+<p>Q = Square of Z, where Z = [(2 * C * D)/H]<br/>
+ </p>
+
+
+### 💻 Solution (python):
+
+```python
+C = 50
+D = 30
+H = int(input())
+Z = (2 * C * D) / H
+Q = Z * Z
+print(Q)
+```
+
+---
+
+## :question: Question 10 (Order: 10)
+
+<p>Write a program to calculate and display the simple interest which applies to the amount of Rs.10000 over a period of '<strong>T' </strong>years and at 6% interest rate.</p>
+<p><strong>Hint:</strong> Formula of simple interest as "Simple Interest = (Principal * Rate * Time) / 100"</p>
+
+
+### 💻 Solution (python):
+
+```python
+principal = 10000
+rate = 6
+T=int(input())
+time = T
+simple_interest = (principal * rate * time) / 100
+print(simple_interest)
+```
+
+---
+
+
+
+
+        <hr>
+        <h2>Process Visualization</h2>
+        <img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d"><img src="5bb0b29ef1efbfcf6a44049d_process.gif" alt="Process Visualization for 5bb0b29ef1efbfcf6a44049d">
+    </body>
+    </html>
+    
